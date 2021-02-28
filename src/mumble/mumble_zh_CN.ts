@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS language="zh_CN" version="2.1">
 <context>
     <name>ACLEditor</name>
     <message>
@@ -1140,7 +1142,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Disable echo cancellation.</source>
-        <translation>禁用回声消除</translation>
+        <translation>禁用回声消除。</translation>
     </message>
 </context>
 <context>
@@ -1215,7 +1217,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>&lt;b&gt;This adjusts the volume of incoming speech.&lt;/b&gt;&lt;br /&gt;Note that if you increase this beyond 100%, audio will be distorted.</source>
-        <translation>&lt;/b&gt;调整传入的语音音量&lt;/b&gt;&lt;br /&gt;注意，如果您将这个值增大到超过 100%，音频将会失真。</translation>
+        <translation>&lt;b&gt;调整传入的语音音量&lt;/b&gt;&lt;br /&gt;注意，如果您将这个值增大到超过 100%，音频将会失真。</translation>
     </message>
     <message>
         <source>Output Delay</source>
@@ -1317,7 +1319,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Attenuate applications by...</source>
-        <translation>减小其他应用音量</translation>
+        <translation>减小其他应用音量...</translation>
     </message>
     <message>
         <source>Attenuation of other applications during speech</source>
@@ -1547,7 +1549,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>This shows the peak power of the speakers in the last frame (20 ms). Unless you are using a multi-channel sampling method (such as ASIO) with speaker channels configured, this will be 0. If you have such a setup configured, and this still shows 0 while you&apos;re playing audio from other programs, your setup is not working.</source>
-        <oldsource>This shows the peak power in the last frame (20 ms) of the speakers. Unless you are using a multi-channel sampling method (such as ASIO) with speaker channels configured, this will be 0. If you have such a setup configured, and this still shows 0 while you're playing audio from other programs, your setup is not working.</oldsource>
+        <oldsource>This shows the peak power in the last frame (20 ms) of the speakers. Unless you are using a multi-channel sampling method (such as ASIO) with speaker channels configured, this will be 0. If you have such a setup configured, and this still shows 0 while you&apos;re playing audio from other programs, your setup is not working.</oldsource>
         <translation>显示最后一帧（20 毫秒）扬声器的峰值功率。除非您配置了扬声器通道的多通道采样方法（例如 ASIO），否则将为 0。如果您进行了这样的配置，并且当您用其他应用程序播放音频时仍然显示 0，则说明您的设置无效。</translation>
     </message>
     <message>
@@ -1764,7 +1766,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>&lt;p&gt;
-To keep latency to an absolute minimum, it's important to buffer as little audio as possible on the soundcard. However, many soundcards report that they require a much smaller buffer than what they can actually work with, so the only way to set this value is to try and fail.
+To keep latency to an absolute minimum, it&apos;s important to buffer as little audio as possible on the soundcard. However, many soundcards report that they require a much smaller buffer than what they can actually work with, so the only way to set this value is to try and fail.
 &lt;/p&gt;
 &lt;p&gt;
 You should hear a voice sample. Change the slider below to the lowest value which gives &lt;b&gt;no&lt;/b&gt; interruptions or jitter in the sound. Please note that local echo is disabled during this test.
@@ -1788,7 +1790,7 @@ You should hear a voice sample. Change the slider below to the lowest value whic
     </message>
     <message>
         <source>&lt;p&gt;
-Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there's an option to enable a &quot;Microphone boost&quot; make sure it's checked.
+Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there&apos;s an option to enable a &quot;Microphone boost&quot; make sure it&apos;s checked.
 &lt;/p&gt;
 &lt;p&gt;
 Speak loudly, as when you are annoyed or excited. Decrease the volume in the sound control panel until the bar below stays as high as possible in the blue and green but &lt;b&gt;not&lt;/b&gt; the red zone while you speak.
@@ -1797,7 +1799,8 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>&lt;p&gt;
 打开操作系统的声音控制面板，前往“录制”设置。确保“麦克风”是当前激活的输入，并且录制音量为最大，如果有“麦克风加强”选项，那么也请启用。
 &lt;/p&gt;
-&lt;p&gt;现在对着麦克风大声说话，并同时逐渐降低“麦克风”面板中的音量，直到下方的指示条在您说话时始终处于蓝色和绿色区域，而&lt;b&gt;不会&lt;/b&gt;到达红色区域。
+&lt;p&gt;
+现在对着麦克风大声说话，并同时逐渐降低“麦克风”面板中的音量，直到下方的指示条在您说话时始终处于蓝色和绿色区域，而&lt;b&gt;不会&lt;/b&gt;到达红色区域。
 &lt;/p&gt;
 </translation>
     </message>
@@ -1818,7 +1821,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 Congratulations. You should now be ready to enjoy a richer sound experience with Mumble.
 &lt;/p&gt;
 &lt;p&gt;
-Mumble is under continuous development, and the development team wants to focus on the features that benefit the most users. To this end, Mumble supports submitting anonymous statistics about your configuration to the developers. These statistics are essential for future development, and also make sure the features you use aren't deprecated.
+Mumble is under continuous development, and the development team wants to focus on the features that benefit the most users. To this end, Mumble supports submitting anonymous statistics about your configuration to the developers. These statistics are essential for future development, and also make sure the features you use aren&apos;t deprecated.
 &lt;/p&gt;
 </source>
         <translation>&lt;p&gt;
@@ -1871,7 +1874,7 @@ Mumble 仍在持续开发中，开发团队希望能专注于大多数用户需�
     </message>
     <message>
         <source>Next you need to adjust the following slider. The first few utterances you say should end up in the green area (definitive speech). While talking, you should stay inside the yellow (might be speech) and when you&apos;re not talking, everything should be in the red (definitively not speech).</source>
-        <oldsource>Next you need to adjust the following two sliders. The first few utterances you say should end up in the green area (definitive speech). While talking, you should stay inside the yellow (might be speech) and when you're not talking, everything should be in the red (definitively not speech).</oldsource>
+        <oldsource>Next you need to adjust the following two sliders. The first few utterances you say should end up in the green area (definitive speech). While talking, you should stay inside the yellow (might be speech) and when you&apos;re not talking, everything should be in the red (definitively not speech).</oldsource>
         <translation>然后我们来调节下方的滑块，使您说的前几个音节能让上方的指示条达到绿色区域（明确发言）；当您正在说话时，指示条应该在黄色区域（疑似发言）；当您不说话时，指示条应该处于红色区域（明确不发言）。</translation>
     </message>
     <message>
@@ -1964,14 +1967,14 @@ Mumble 仍在持续开发中，开发团队希望能专注于大多数用户需�
     </message>
     <message>
         <source>&lt;p&gt;
-Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there's an option to enable a &quot;Microphone boost&quot; make sure it's checked.
+Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there&apos;s an option to enable a &quot;Microphone boost&quot; make sure it&apos;s checked.
 &lt;/p&gt;
 &lt;p&gt;
 Speak loudly, as when you are annoyed or excited. Decrease the volume in the sound control panel until the bar below stays as high as possible in the striped and the empty but &lt;b&gt;not&lt;/b&gt; the crisscrossed zone while you speak.
 &lt;/p&gt;
 </source>
         <oldsource>&lt;p&gt;
-Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there's an option to enable a &quot;Microphone boost&quot; make sure it's checked.
+Open your sound control panel and go to the recording settings. Make sure the microphone is selected as active input with maximum recording volume. If there&apos;s an option to enable a &quot;Microphone boost&quot; make sure it&apos;s checked.
 &lt;/p&gt;
 &lt;p&gt;
 Speak loudly, as when you are annoyed or excited. Decrease the volume in the sound control panel until the bar below stays as high as possible in the striped and the empty but &lt;b&gt;not&lt;/b&gt; the criss-crossed zone while you speak.
@@ -1981,7 +1984,8 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <translation>&lt;p&gt;
 打开操作系统的声音控制面板，前往“录制”设置。确保“麦克风”是当前激活的输入，并且录制音量为最大，如果有“麦克风加强”选项，那么也请启用。
 &lt;/p&gt;
-&lt;p&gt;现在对着麦克风大声说话，并同时逐渐降低“麦克风”面板中的音量，直到下方的指示条在您说话时始终处于条纹和空白区域，而&lt;b&gt;不会&lt;/b&gt;到达网格区域。
+&lt;p&gt;
+现在对着麦克风大声说话，并同时逐渐降低“麦克风”面板中的音量，直到下方的指示条在您说话时始终处于条纹和空白区域，而&lt;b&gt;不会&lt;/b&gt;到达网格区域。
 &lt;/p&gt;
 </translation>
     </message>
@@ -2192,7 +2196,9 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     </message>
     <message numerus="yes">
         <source>Ban List - %n Ban(s)</source>
-        <translation><numerusform>封禁列表 - %n 个封禁</numerusform></translation>
+        <translation>
+            <numerusform>封禁列表 - %n 个封禁</numerusform>
+        </translation>
     </message>
     <message>
         <source>Search</source>
@@ -2460,7 +2466,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <source>&lt;p&gt;You already have a certificate stored in Mumble, and you are about to replace it.&lt;/p&gt;
 &lt;p&gt;If you are upgrading to a certificate issued to you by a trusted CA and the email addresses match your current certificate, this is completely safe, and servers you connect to will automatically recognize the strong certificate for your email address.
 &lt;/p&gt;
-&lt;p&gt;If this is not the case, you will no longer be recognized by any server you previously have authenticated with. If you haven't been registered on any server yet, this is nothing to worry about.
+&lt;p&gt;If this is not the case, you will no longer be recognized by any server you previously have authenticated with. If you haven&apos;t been registered on any server yet, this is nothing to worry about.
 &lt;/p&gt;
 &lt;p&gt;
 Are you sure you wish to replace your certificate?
@@ -2651,7 +2657,7 @@ Are you sure you wish to replace your certificate?
     </message>
     <message>
         <source>This represents the permission to link channels. Users in linked channels hear each other, as long as the speaking user has the &lt;i&gt;speak&lt;/i&gt; privilege in the channel of the listener. You need the link privilege in both channels to create a link, but just in either channel to remove it.</source>
-        <translation>允许链接频道。只要说话的用户拥有对应频道的说话权限，被链接的频道内的用户就可以听到彼此的说话。您需要同时拥有两个频道的链接权限才能创建频道链接，但是只要拥有其中一个频道的链接权限就能删除此链接。</translation>
+        <translation>允许链接频道。只要说话的用户拥有对应频道的&lt;i&gt;说话&lt;/i&gt;权限，被链接的频道内的用户就可以听到彼此的说话。您需要同时拥有两个频道的链接权限才能创建频道链接，但是只要拥有其中一个频道的链接权限就能删除此链接。</translation>
     </message>
     <message>
         <source>This represents the permission to write text messages to other users in this channel.</source>
@@ -3070,7 +3076,7 @@ Are you sure you wish to replace your certificate?
         <source>&lt;b&gt;Address&lt;/b&gt;&lt;br/&gt;
 Internet address of the server. This can be a normal hostname, an IPv4/IPv6 address or a Bonjour service identifier. Bonjour service identifiers have to be prefixed with a &apos;@&apos; to be recognized by Mumble.</source>
         <oldsource>&lt;b&gt;Address&lt;/b&gt;&lt;/br&gt;
-Internet address of the server. This can be a normal hostname, an ipv4/6 address or a bonjour service identifier. Bonjour service identifiers have to be prefixed with a '@' to be recognized by Mumble.</oldsource>
+Internet address of the server. This can be a normal hostname, an ipv4/6 address or a bonjour service identifier. Bonjour service identifiers have to be prefixed with a &apos;@&apos; to be recognized by Mumble.</oldsource>
         <translation>&lt;b&gt;地址&lt;/b&gt;&lt;br/&gt;
 服务器的 Internet 地址，可以是普通的主机名、IPv4/IPv6 地址或者一个 Bonjour 服务 ID。Bonjour 服务 ID 必须以“@”为前缀，Mumble 才能识别。</translation>
     </message>
@@ -3239,7 +3245,7 @@ Label of the server. This is what the server will be named like in your server l
     <name>Database</name>
     <message>
         <source>The database &apos;%1&apos; is read-only. Mumble cannot store server settings (i.e. SSL certificates) until you fix this problem.</source>
-        <oldsource>The database '%1' is read-only. Mumble can not store server settings (ie. SSL certificates) until you fix this problem.</oldsource>
+        <oldsource>The database &apos;%1&apos; is read-only. Mumble can not store server settings (ie. SSL certificates) until you fix this problem.</oldsource>
         <translation>数据库“%1”是只读的。在修复此错误前，Mumble 将无法保存服务器设置（即 SSL 证书）。</translation>
     </message>
     <message>
@@ -4305,7 +4311,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>String to separate a channel name from its parent&apos;s.</source>
-        <translation>分隔当前频道与父频道名称的字符</translation>
+        <translation>分隔当前频道与父频道名称的字符。</translation>
     </message>
     <message>
         <source>Channel separator</source>
@@ -4417,7 +4423,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>Whether to show all of the local user&apos;s listeners (ears) in the TalkingUI (and thereby also the channels they are in). </source>
-        <translation>是否在对话界面显示本地用户的所有监听者（以及他们所在频道）。</translation>
+        <translation>是否在对话界面显示本地用户的所有监听者（以及他们所在频道）。 </translation>
     </message>
     <message>
         <source>Show local user&apos;s listeners (ears)</source>
@@ -4716,12 +4722,12 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>&lt;center&gt;Type message to channel &apos;%1&apos; here&lt;/center&gt;</source>
-        <oldsource>Type message to channel '%1' here</oldsource>
+        <oldsource>Type message to channel &apos;%1&apos; here</oldsource>
         <translation>&lt;center&gt;在此输入发送到频道“%1”的消息&lt;/center&gt;</translation>
     </message>
     <message>
         <source>&lt;center&gt;Type message to user &apos;%1&apos; here&lt;/center&gt;</source>
-        <oldsource>Type message to user '%1' here</oldsource>
+        <oldsource>Type message to user &apos;%1&apos; here</oldsource>
         <translation>&lt;center&gt;在此输入发送给用户“%1”的消息&lt;/center&gt;</translation>
     </message>
     <message>
@@ -5011,7 +5017,9 @@ The setting only applies for new messages, the already shown ones will retain th
         <source>Wrong certificate or password for registered user. If you are
 certain this user is protected by a password please retry.
 Otherwise abort and check your certificate and username.</source>
-        <translation>已注册用户的证书或者密码错误。如果您的确是被密码保护的用户，请重试。否则请退出并检查您的证书与用户名。</translation>
+        <translation>已注册用户的证书或者密码错误。如果您
+的确是被密码保护的用户，请重试。否则
+请退出并检查您的证书与用户名。</translation>
     </message>
     <message>
         <source>Wrong password</source>
@@ -5921,7 +5929,8 @@ You can mark additional channels for filtering from
 the channel&apos;s context menu.</source>
         <translation>对所选频道启用或禁用筛选。
 默认情况下，所有空频道会被隐藏。
-您可以通过频道的右键菜单将频道标记为筛选时隐藏。</translation>
+您可以通过频道的右键菜单将频道标记为
+筛选时隐藏。</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -5969,15 +5978,15 @@ the channel&apos;s context menu.</source>
     </message>
     <message>
         <source>&amp;Connect...</source>
-        <translation>连接(&amp;C)…</translation>
+        <translation>连接(&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Ban list...</source>
-        <translation>封禁列表(&amp;B)…</translation>
+        <translation>封禁列表(&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Information...</source>
-        <translation>服务器信息(&amp;I)…</translation>
+        <translation>服务器信息(&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Kick...</source>
@@ -6013,7 +6022,7 @@ the channel&apos;s context menu.</source>
     </message>
     <message>
         <source>&amp;Settings...</source>
-        <translation>设置(&amp;S)…</translation>
+        <translation>设置(&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Audio Wizard...</source>
@@ -6153,7 +6162,7 @@ the channel&apos;s context menu.</source>
     </message>
     <message>
         <source>Joins the channel of this user.</source>
-        <translation>加入此用户所在的频道</translation>
+        <translation>加入此用户所在的频道。</translation>
     </message>
     <message>
         <source>Channels and users</source>
@@ -6222,7 +6231,7 @@ Valid options are:
   -c, --config
                 Specify an alternative configuration file.
                 If you use this to run multiple instances of Mumble at once,
-                make sure to set an alternative 'database' value in the config.
+                make sure to set an alternative &apos;database&apos; value in the config.
   -n, --noidentity
                 Suppress loading of identity files (i.e., certificates.)
   -jn, --jackname &lt;arg&gt;
@@ -6292,7 +6301,7 @@ mumble://[&lt;用户名&gt;[:&lt;密码&gt;]@]&lt;主机名&gt;[:&lt;端口&gt;]
     </message>
     <message>
         <source>&amp;Set Nickname...</source>
-        <translation>设置昵称(&amp;S)</translation>
+        <translation>设置昵称(&amp;S)...</translation>
     </message>
     <message>
         <source>Set a local nickname</source>
@@ -6306,7 +6315,7 @@ mumble://[&lt;用户名&gt;[:&lt;密码&gt;]@]&lt;主机名&gt;[:&lt;端口&gt;]
         <source>Usage: mumble rpc &lt;action&gt; [options]
 
 It is possible to remote control a running instance of Mumble by using
-the 'mumble rpc' command.
+the &apos;mumble rpc&apos; command.
 
 Valid actions are:
   mute
@@ -6631,7 +6640,7 @@ Valid actions are:
         <translation>阻止向 Mumble 服务器和网页服务器发送操作系统信息</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Don't send OS information to servers&lt;/b&gt;&lt;br/&gt;
+        <source>&lt;b&gt;Don&apos;t send OS information to servers&lt;/b&gt;&lt;br/&gt;
 Prevents the client from sending potentially identifying information about the operating system to the Mumble server and web servers.</source>
         <translation>&lt;b&gt;请勿向服务器发送操作系统信息&lt;/b&gt;&lt;br/&gt;
 阻止客户端向 Mumble 服务器和网页服务器发送潜在的操作系统识别信息。</translation>
@@ -7277,7 +7286,7 @@ To upgrade these files to their latest versions, click the button below.</source
         <translation>回声消除不支持“%1”输入与“%2”输出接口的组合。</translation>
     </message>
     <message>
-        <source>&lt;p&gt;If you're using Linux this is most likely because you are using a version from your distribution's package repository that have their own update cycles.&lt;/p&gt;&lt;p&gt;If you want to always have the most recent Mumble version, you should consider using a different method of installation.
+        <source>&lt;p&gt;If you&apos;re using Linux this is most likely because you are using a version from your distribution&apos;s package repository that have their own update cycles.&lt;/p&gt;&lt;p&gt;If you want to always have the most recent Mumble version, you should consider using a different method of installation.
 See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;the Mumble wiki&lt;/a&gt; for what alternatives there are.&lt;/p&gt;</source>
         <translation>&lt;p&gt;如果您正在使用 Linux，这很可能是因为您使用的版本来自发行版的软件包仓库，它们有自己的更新周期。&lt;/p&gt;&lt;p&gt;如果您希望始终使用最新版本的 Mumble，就应该考虑使用其他安装方式。
 阅读 &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;Mumble Wiki&lt;/a&gt; 了解具体方式。&lt;/p&gt;</translation>
@@ -7304,7 +7313,7 @@ See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;th
     </message>
     <message>
         <source>&lt;p&gt;You&apos;re using a Mumble version that &lt;b&gt;explicitly disabled&lt;/b&gt; update-checks.&lt;/p&gt;&lt;p&gt;This means that the update notification you might receive by using this option will &lt;b&gt;most likely be meaningless&lt;/b&gt; for you.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;您正在使用&lt;b&gt;显式禁用&lt;/b&gt;更新检查的 Mumble 版本。&lt;p&gt;这意味着您通过此选项收到的更新提醒对您来说&lt;b&gt;很可能是无意义的&lt;/b&gt;。&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;您正在使用&lt;b&gt;显式禁用&lt;/b&gt;更新检查的 Mumble 版本。&lt;/p&gt;&lt;p&gt;这意味着您通过此选项收到的更新提醒对您来说&lt;b&gt;很可能是无意义的&lt;/b&gt;。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Talking (muted)</source>
@@ -7683,7 +7692,7 @@ See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;th
     <message>
         <source>&lt;b&gt;This is an editable list of access tokens on the connected server.&lt;/b&gt;
 &lt;br /&gt;
-An access token is a text string, which can be used as a password for very simple access management on channels. Mumble will remember the tokens you've used and resend them to the server next time you reconnect, so you don't have to enter these every time.
+An access token is a text string, which can be used as a password for very simple access management on channels. Mumble will remember the tokens you&apos;ve used and resend them to the server next time you reconnect, so you don&apos;t have to enter these every time.
 </source>
         <translation>&lt;b&gt;这是包含已连接服务器上访问令牌的可编辑列表。&lt;/b&gt;
 &lt;br /&gt;
@@ -7751,7 +7760,9 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message numerus="yes">
         <source>Registered users: %n account(s)</source>
-        <translation><numerusform>已注册用户：%n 个帐户</numerusform></translation>
+        <translation>
+            <numerusform>已注册用户：%n 个帐户</numerusform>
+        </translation>
     </message>
     <message>
         <source>Search</source>
@@ -8118,7 +8129,7 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <source>Talking while being muted on your end</source>
-        <translation>正在说话，但您已对其静音。</translation>
+        <translation>正在说话，但您已对其静音</translation>
     </message>
     <message>
         <source>This is a channel listener. The corresponding user hears everything you say in this channel.</source>
@@ -8126,11 +8137,11 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <source>Channel has access restrictions so that you can&apos;t enter it</source>
-        <translation>频道具有访问限制，您无法进入。</translation>
+        <translation>频道具有访问限制，您无法进入</translation>
     </message>
     <message>
         <source>Channel has access restrictions but you can enter nonetheless</source>
-        <translation>频道具有访问限制，但您仍可以进入。</translation>
+        <translation>频道具有访问限制，但您仍可以进入</translation>
     </message>
 </context>
 <context>
