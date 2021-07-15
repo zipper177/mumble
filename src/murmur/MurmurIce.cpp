@@ -7,7 +7,6 @@
 
 #include "Ban.h"
 #include "Channel.h"
-#include "ChannelListener.h"
 #include "Group.h"
 #include "Meta.h"
 #include "MurmurI.h"
@@ -1444,47 +1443,51 @@ static void impl_Server_setACL(const ::Murmur::AMD_Server_setACLPtr cb, int serv
 	NEED_SERVER;
 	NEED_CHANNEL;
 
-	::Group *g;
-	ChanACL *acl;
+	{
+		QWriteLocker locker(&server->qrwlVoiceThread);
 
-	QHash< QString, QSet< int > > hOldTemp;
-	foreach (g, channel->qhGroups) {
-		hOldTemp.insert(g->qsName, g->qsTemporary);
-		delete g;
-	}
-	foreach (acl, channel->qlACL)
-		delete acl;
+		::Group *g;
+		ChanACL *acl;
 
-	channel->qhGroups.clear();
-	channel->qlACL.clear();
+		QHash< QString, QSet< int > > hOldTemp;
+		foreach (g, channel->qhGroups) {
+			hOldTemp.insert(g->qsName, g->qsTemporary);
+			delete g;
+		}
+		foreach (acl, channel->qlACL)
+			delete acl;
 
-	channel->bInheritACL = inherit;
-	foreach (const ::Murmur::Group &gi, groups) {
-		QString name    = u8(gi.name);
-		g               = new ::Group(channel, name);
-		g->bInherit     = gi.inherit;
-		g->bInheritable = gi.inheritable;
+		channel->qhGroups.clear();
+		channel->qlACL.clear();
+
+		channel->bInheritACL = inherit;
+		foreach (const ::Murmur::Group &gi, groups) {
+			QString name    = u8(gi.name);
+			g               = new ::Group(channel, name);
+			g->bInherit     = gi.inherit;
+			g->bInheritable = gi.inheritable;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-		QVector< int > addVec(gi.add.begin(), gi.add.end());
-		QVector< int > removeVec(gi.remove.begin(), gi.remove.end());
+			QVector< int > addVec(gi.add.begin(), gi.add.end());
+			QVector< int > removeVec(gi.remove.begin(), gi.remove.end());
 
-		g->qsAdd    = QSet< int >(addVec.begin(), addVec.end());
-		g->qsRemove = QSet< int >(removeVec.begin(), removeVec.end());
+			g->qsAdd    = QSet< int >(addVec.begin(), addVec.end());
+			g->qsRemove = QSet< int >(removeVec.begin(), removeVec.end());
 #else
-		// Qt 5.14 prefers to use the new range-based constructor for vectors and sets
-		g->qsAdd    = QVector< int >::fromStdVector(gi.add).toList().toSet();
-		g->qsRemove = QVector< int >::fromStdVector(gi.remove).toList().toSet();
+			// Qt 5.14 prefers to use the new range-based constructor for vectors and sets
+			g->qsAdd    = QVector< int >::fromStdVector(gi.add).toList().toSet();
+			g->qsRemove = QVector< int >::fromStdVector(gi.remove).toList().toSet();
 #endif
-		g->qsTemporary = hOldTemp.value(name);
-	}
-	foreach (const ::Murmur::ACL &ai, acls) {
-		acl             = new ChanACL(channel);
-		acl->bApplyHere = ai.applyHere;
-		acl->bApplySubs = ai.applySubs;
-		acl->iUserId    = ai.userid;
-		acl->qsGroup    = u8(ai.group);
-		acl->pDeny      = static_cast< ChanACL::Permissions >(ai.deny) & ChanACL::All;
-		acl->pAllow     = static_cast< ChanACL::Permissions >(ai.allow) & ChanACL::All;
+			g->qsTemporary = hOldTemp.value(name);
+		}
+		foreach (const ::Murmur::ACL &ai, acls) {
+			acl             = new ChanACL(channel);
+			acl->bApplyHere = ai.applyHere;
+			acl->bApplySubs = ai.applySubs;
+			acl->iUserId    = ai.userid;
+			acl->qsGroup    = u8(ai.group);
+			acl->pDeny      = static_cast< ChanACL::Permissions >(ai.deny) & ChanACL::All;
+			acl->pAllow     = static_cast< ChanACL::Permissions >(ai.allow) & ChanACL::All;
+		}
 	}
 
 	server->clearACLCache();
@@ -1736,7 +1739,7 @@ static void impl_Server_isListening(const ::Murmur::AMD_Server_isListeningPtr cb
 	NEED_CHANNEL;
 	NEED_PLAYER;
 
-	cb->ice_response(ChannelListener::isListening(user, channel));
+	cb->ice_response(server->m_channelListenerManager.isListening(user->uiSession, channel->iId));
 }
 
 static void impl_Server_getListeningChannels(const ::Murmur::AMD_Server_getListeningChannelsPtr cb, int server_id,
@@ -1745,7 +1748,7 @@ static void impl_Server_getListeningChannels(const ::Murmur::AMD_Server_getListe
 	NEED_PLAYER;
 
 	::Murmur::IntList channelIDs;
-	foreach (int currentChannelID, ChannelListener::getListenedChannelsForUser(user)) {
+	foreach (int currentChannelID, server->m_channelListenerManager.getListenedChannelsForUser(user->uiSession)) {
 		channelIDs.push_back(currentChannelID);
 	}
 
@@ -1758,7 +1761,7 @@ static void impl_Server_getListeningUsers(const ::Murmur::AMD_Server_getListenin
 	NEED_CHANNEL;
 
 	::Murmur::IntList userSessions;
-	foreach (unsigned int currentSession, ChannelListener::getListenersForChannel(channel)) {
+	foreach (unsigned int currentSession, server->m_channelListenerManager.getListenersForChannel(channel->iId)) {
 		userSessions.push_back(currentSession);
 	}
 

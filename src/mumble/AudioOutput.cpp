@@ -9,7 +9,7 @@
 #include "AudioOutputSample.h"
 #include "AudioOutputSpeech.h"
 #include "Channel.h"
-#include "ChannelListener.h"
+#include "ChannelListenerManager.h"
 #include "Message.h"
 #include "PacketDataStream.h"
 #include "PluginManager.h"
@@ -95,6 +95,7 @@ AudioOutput::~AudioOutput() {
 // close, we'll hear it full intensity from the left side, and "bloom" intensity from the right side.
 
 float AudioOutput::calcGain(float dotproduct, float distance) {
+	// dotproduct is in the range [-1, 1], thus we renormalize it to the range [0, 1]
 	float dotfactor = (dotproduct + 1.0f) / 2.0f;
 	float att;
 
@@ -103,6 +104,8 @@ float AudioOutput::calcGain(float dotproduct, float distance) {
 	if (Global::get().s.fAudioMaxDistVolume > 0.99f) {
 		att = qMin(1.0f, dotfactor + Global::get().s.fAudioBloom);
 	} else if (distance < Global::get().s.fAudioMinDistance) {
+		// Fade in blooming as soon as the sound source enters fAudioMinDistance and increase it to its full
+		// capability when the audio source is at the same position as the local player
 		float bloomfac = Global::get().s.fAudioBloom * (1.0f - distance / Global::get().s.fAudioMinDistance);
 
 		att = qMin(1.0f, bloomfac + dotfactor);
@@ -501,12 +504,14 @@ bool AudioOutput::mix(void *outbuff, unsigned int frameCount) {
 				user = speech->p;
 				volumeAdjustment *= user->getLocalVolumeAdjustments();
 
-				if (user->cChannel && ChannelListener::isListening(Global::get().uiSession, user->cChannel->iId)
+				if (user->cChannel
+					&& Global::get().channelListenerManager->isListening(Global::get().uiSession, user->cChannel->iId)
 					&& (speech->ucFlags & SpeechFlags::Listen)) {
 					// We are receiving this audio packet only because we are listening to the channel
 					// the speaking user is in. Thus we receive the audio via our "listener proxy".
 					// Thus we'll apply the volume adjustment for our listener proxy as well
-					volumeAdjustment *= ChannelListener::getListenerLocalVolumeAdjustment(user->cChannel);
+					volumeAdjustment *=
+						Global::get().channelListenerManager->getListenerLocalVolumeAdjustment(user->cChannel->iId);
 				}
 
 				if (prioritySpeakerActive) {
@@ -583,29 +588,59 @@ bool AudioOutput::mix(void *outbuff, unsigned int frameCount) {
 						aop->pfVolume[s] = -1.0;
 				}
 
+				if (!aop->piOffset) {
+					aop->piOffset = std::make_unique< unsigned int[] >(nchan);
+					for (unsigned int s = 0; s < nchan; ++s) {
+						aop->piOffset[s] = 0;
+					}
+				}
+
 				for (unsigned int s = 0; s < nchan; ++s) {
 					const float dot = bSpeakerPositional[s]
 										  ? connectionVec.x * speaker[s * 3 + 0] + connectionVec.y * speaker[s * 3 + 1]
 												+ connectionVec.z * speaker[s * 3 + 2]
 										  : 1.0f;
-					const float str   = svol[s] * calcGain(dot, len) * volumeAdjustment;
+					// Volume on the ear opposite to the sound should never reach 0 in the real world.
+					// The gain is multiplied by 19/20 and 1/20 is added. This will have the effect
+					// of bringing the lowest value up to 1/20, while keeping the highest value at 1.
+					// E.g. calcGain() = 1; 1 * 19/20 + 1/20 = 0.95 + 0.05 = 1
+					// calcGain() = 0; 0 * 19/20 + 1/20 = 0 + 0.05 = 0.05
+					const float str   = svol[s] * (1 / 20.0 + (19 / 20.0) * calcGain(dot, len)) * volumeAdjustment;
 					float *RESTRICT o = output + s;
 					const float old   = (aop->pfVolume[s] >= 0.0f) ? aop->pfVolume[s] : str;
 					const float inc   = (str - old) / static_cast< float >(frameCount);
 					aop->pfVolume[s]  = str;
+
+					// Calculates the ITD offset of the audio data this frame.
+					// Interaural Time Delay (ITD) is a small time delay between your ears
+					// depending on the sound source position on the horizonal plane and the
+					// distance between your ears.
+					//
+					// Offset for ITD is not applied directly, but rather the offset is interpolated
+					// linearly across the entire chunk, between the offset of the last chunk and the
+					// newly calculated offset for this chunk. This prevents clicking / buzzing when the
+					// audio source or camera is moving, because abruptly changing offsets (and thus
+					// abruptly changing the playback position) will create a clicking noise.
+					const int offset =
+						INTERAURAL_DELAY * (1.0 + dot) / 2.0; // Normalize dot to range [0,1] instead [-1,1]
+					const int oldOffset   = aop->piOffset[s];
+					const float incOffset = (offset - oldOffset) / static_cast< float >(frameCount);
+					aop->piOffset[s]      = offset;
 					/*
 										qWarning("%d: Pos %f %f %f : Dot %f Len %f Str %f", s, speaker[s*3+0],
 					   speaker[s*3+1], speaker[s*3+2], dot, len, str);
 					*/
 					if ((old >= 0.00000001f) || (str >= 0.00000001f)) {
 						for (unsigned int i = 0; i < frameCount; ++i) {
+							unsigned int currentOffset = oldOffset + incOffset * i;
 							if (speech && speech->bStereo) {
 								// Mix stereo user's stream into mono
 								// frame: for a stereo stream, the [LR] pair inside ...[LR]LRLRLR.... is a frame
-								o[i * nchan] += (pfBuffer[2 * i] / 2.0 + pfBuffer[2 * i + 1] / 2.0)
-												* (old + inc * static_cast< float >(i));
+								o[i * nchan] +=
+									(pfBuffer[2 * i + currentOffset] / 2.0 + pfBuffer[2 * i + currentOffset + 1] / 2.0)
+									* (old + inc * static_cast< float >(i));
 							} else {
-								o[i * nchan] += pfBuffer[i] * (old + inc * static_cast< float >(i));
+								o[i * nchan] += pfBuffer[i + currentOffset] * (old + inc * static_cast< float >(i));
 							}
 						}
 					}

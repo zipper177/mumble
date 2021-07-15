@@ -7,6 +7,9 @@ cmake_minimum_required(VERSION 3.15)
 
 cmake_policy(SET CMP0079 NEW)
 cmake_policy(SET CMP0091 NEW)
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.20.0")
+	cmake_policy(SET CMP0118 NEW)
+endif()
 
 set(BUILD_NUMBER CACHE STRING "The build number of the current build. Will be used in Mumble's version to make sure newer builds upgrade older installations properly.")
 set(RELEASE_ID CACHE STRING "The ID of the current release (used for representation in the UI and the updater)")
@@ -23,7 +26,7 @@ endif()
 string(TIMESTAMP MUMBLE_BUILD_YEAR "%Y")
 
 project(Mumble
-	VERSION "1.4.0.${BUILD_NUMBER}"
+	VERSION "1.5.0.${BUILD_NUMBER}"
 	DESCRIPTION "Open source, low-latency, high quality voice chat."
 	HOMEPAGE_URL "https://www.mumble.info"
 	LANGUAGES "C" "CXX"
@@ -33,16 +36,18 @@ set(3RDPARTY_DIR "${CMAKE_SOURCE_DIR}/3rdparty")
 set(PLUGINS_DIR "${CMAKE_SOURCE_DIR}/plugins")
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_OSX_DEPLOYMENT_TARGET 10.9)
+set(CMAKE_OSX_DEPLOYMENT_TARGET 10.13)
 
 list(APPEND CMAKE_MODULE_PATH
 	"${CMAKE_SOURCE_DIR}/cmake"
 	"${CMAKE_SOURCE_DIR}/cmake/FindModules"
+	"${3RDPARTY_DIR}/FindPythonInterpreter"
 )
 
 
 include(pkg-utils)
 include(project-utils)
+include(TargetArch)
 
 
 option(tests "Build tests" OFF)
@@ -70,16 +75,13 @@ endif()
 include(compiler)
 include(os)
 
-if (64_BIT)
-	set(ARCH "x64")
-else()
-	set(ARCH "x86")
-endif()
+target_architecture(MUMBLE_TARGET_ARCH)
+string(TOLOWER "${MUMBLE_TARGET_ARCH}" MUMBLE_TARGET_ARCH)
 
 message(STATUS "##################################################")
 message(STATUS "Mumble release ID:       ${RELEASE_ID}")
 message(STATUS "Mumble version:          ${PROJECT_VERSION}")
-message(STATUS "Architecture:            ${ARCH}")
+message(STATUS "Architecture:            ${MUMBLE_TARGET_ARCH}")
 if(NOT IS_MULTI_CONFIG)
     message(STATUS "Build type:              ${CMAKE_BUILD_TYPE}")
 else()
@@ -105,12 +107,30 @@ if(tests)
 	include(CTest)
 endif()
 
+if (WIN32)
+	set(MUMBLE_TARGET_OS "windows")
+elseif (APPLE)
+	set(MUMBLE_TARGET_OS "macos")
+elseif (UNIX)
+	set(MUMBLE_TARGET_OS "linux")
+else()
+	message(FATAL_ERROR "Unable to determine target OS")
+endif()
+
 
 # Make the build year accessible as a macro
 add_compile_definitions(MUMBLE_BUILD_YEAR=${MUMBLE_BUILD_YEAR})
 
 # Make sure that math constants are always defined
 add_compile_definitions(_USE_MATH_DEFINES)
+
+
+# Provide the information about the target architecture to all Mumble source files in form of a macro
+add_compile_definitions(MUMBLE_TARGET_ARCH="${MUMBLE_TARGET_ARCH}")
+
+# Also provide information about the target OS
+add_compile_definitions(MUMBLE_TARGET_OS="${MUMBLE_TARGET_OS}")
+
 
 set(CMAKE_UNITY_BUILD_BATCH_SIZE 40)
 

@@ -102,8 +102,8 @@ struct InnerNet_InnerNetClient_Fields : UnityEngine_Object_Fields {
 	ptr_t destroyedObjects;
 	ptr_t allObjects;
 	ptr_t allObjectsFast;
-	ptr_t messageWriterArray;
-	int32_t unknown;
+	ptr_t streams;
+	int32_t msgNum;
 	ptr_t networkAddress;
 	int32_t networkPort;
 	ptr_t connection;
@@ -113,6 +113,7 @@ struct InnerNet_InnerNetClient_Fields : UnityEngine_Object_Fields {
 	int32_t hostId;
 	int32_t clientId;
 	ptr_t allClients;
+	ptr_t recentClients;
 	DisconnectReason lastDisconnectReason;
 	ptr_t lastCustomDisconnect;
 	ptr_t preSpawnDispatcher;
@@ -197,14 +198,14 @@ struct PlayerControl_Fields : InnerNet_InnerNetObject_Fields {
 	ptr_t nameText;
 	ptr_t lightPrefab;
 	ptr_t myLight;
-	ptr_t textTranslator;
 	ptr_t collider;
 	ptr_t myPhysics;
 	ptr_t netTransform;
 	ptr_t currentPet;
 	ptr_t hatRenderer;
 	ptr_t spriteRenderer;
-	ptr_t colliderArray;
+	ptr_t spriteAnim;
+	ptr_t hitBuffer;
 	ptr_t myTasks;
 	ptr_t scannerAnims;
 	ptr_t scannersImages;
@@ -240,7 +241,7 @@ struct PlayerControl_o {
 struct GameData_PlayerInfo_Fields {
 	uint8_t playerId;
 	ptr_t playerName;
-	bool unknown;
+	bool dontCensorName;
 	int32_t colorId;
 	uint32_t hatId;
 	uint32_t petId;

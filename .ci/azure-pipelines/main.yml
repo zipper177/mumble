@@ -8,6 +8,9 @@ variables:
   MUMBLE_ENVIRONMENT_SOURCE: 'https://dl.mumble.info/build/vcpkg'
   MUMBLE_ENVIRONMENT_PATH: '$(MUMBLE_ENVIRONMENT_STORE)/$(MUMBLE_ENVIRONMENT_VERSION)'
   MUMBLE_ENVIRONMENT_TOOLCHAIN: '$(MUMBLE_ENVIRONMENT_PATH)/scripts/buildsystems/vcpkg.cmake'
+  MUMBLE_SOURCE_COMMIT: '$(Build.SourceVersion)'
+  MUMBLE_SOURCE_REPOSITORY: '$(Build.SourcesDirectory)'
+  MUMBLE_BUILD_DIRECTORY: '$(Build.BinariesDirectory)'
   # On Azure we have a secret variable called BUILD_NUMBER_TOKEN that will be referenced in the following
   # YAML files. As it is set there though, we don't have to specify it here.
 
@@ -19,7 +22,7 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     variables:
-      MUMBLE_ENVIRONMENT_VERSION: 'windows-static-1.4.x~2021-02-16~gcd7e9f9d.x64'
+      MUMBLE_ENVIRONMENT_VERSION: 'windows-static-1.4.x~2021-04-26~7da4529f.x64'
       MUMBLE_ENVIRONMENT_TRIPLET: 'x64-windows-static-md'
       VCVARS_PATH: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat'
     steps:
@@ -34,7 +37,7 @@ jobs:
     pool:
       vmImage: 'windows-latest'
     variables:
-      MUMBLE_ENVIRONMENT_VERSION: 'windows-static-1.4.x~2021-02-16~gcd7e9f9d.x86'
+      MUMBLE_ENVIRONMENT_VERSION: 'windows-static-1.4.x~2021-04-26~7da4529f.x86'
       MUMBLE_ENVIRONMENT_TRIPLET: 'x86-windows-static-md'
       VCVARS_PATH: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsamd64_x86.bat'
     steps:

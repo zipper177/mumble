@@ -24,6 +24,9 @@
 #include <pulse/thread-mainloop.h>
 #include <pulse/volume.h>
 
+#include <condition_variable>
+#include <mutex>
+
 struct PulseAttenuation {
 	uint32_t index;
 	QString name;
@@ -119,6 +122,10 @@ private:
 	Q_OBJECT
 	Q_DISABLE_COPY(PulseAudioSystem)
 protected:
+	bool m_initialized = false;
+	std::mutex m_initLock;
+	std::condition_variable m_initWaiter;
+
 	void wakeup();
 
 	PulseAudio m_pulseAudio;
@@ -177,8 +184,6 @@ public:
 	QHash< QString, QString > qhInput;
 	QHash< QString, QString > qhOutput;
 	bool bPulseIsGood;
-	QMutex qmWait;
-	QWaitCondition qwcWait;
 
 	void wakeup_lock();
 

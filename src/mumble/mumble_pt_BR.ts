@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>Mumble - Add channel</source>
-        <translation>Mumble - Adicionar Canal</translation>
+        <translation>Mumble - Adicionar canal</translation>
     </message>
     <message>
         <source>Default server value</source>
@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>Channel must have a name</source>
-        <translation>Canal deve possuir um nome</translation>
+        <translation>O canal deve possuir um nome</translation>
     </message>
     <message>
         <source>This revokes the %1 privilege. If a privilege is both allowed and denied, it is denied.&lt;br /&gt;%2</source>
@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Enter the channel name here.</source>
-        <translation>Especifique o nome do canal aqui.</translation>
+        <translation>Insira o nome do canal aqui</translation>
     </message>
     <message>
         <source>Description</source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Enter the channel password here.</source>
-        <translation>Especifique a senha do canal aqui.</translation>
+        <translation>Insira a senha do canal aqui.</translation>
     </message>
     <message>
         <source>Check to create a temporary channel.</source>
@@ -109,11 +109,11 @@ Este valor permite-lhe trocar a forma com que o Mumble ordena os canais na árvo
     </message>
     <message>
         <source>Remove selected group</source>
-        <translation>Elimina o grupo selecionado</translation>
+        <translation>Exclui o grupo selecionado</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Eliminar</translation>
+        <translation>Excluir</translation>
     </message>
     <message>
         <source>Inherit group members from parent</source>
@@ -153,7 +153,7 @@ Este valor permite-lhe trocar a forma com que o Mumble ordena os canais na árvo
     </message>
     <message>
         <source>Remove member from group</source>
-        <translation>Eliminar membro do grupo</translation>
+        <translation>Remover membro do grupo</translation>
     </message>
     <message>
         <source>&amp;ACL</source>
@@ -201,7 +201,7 @@ Este valor permite-lhe trocar a forma com que o Mumble ordena os canais na árvo
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation>&amp;Baixar</translation>
+        <translation>&amp;Descer</translation>
     </message>
     <message>
         <source>Add new entry</source>
@@ -217,15 +217,15 @@ Este valor permite-lhe trocar a forma com que o Mumble ordena os canais na árvo
     </message>
     <message>
         <source>Remove entry</source>
-        <translation>Eliminar entrada</translation>
+        <translation>Excluir entrada</translation>
     </message>
     <message>
         <source>This removes the currently selected entry.</source>
-        <translation>Elimina a entrada selecionada atualmente.</translation>
+        <translation>Exclui a entrada selecionada.</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;Eliminar</translation>
+        <translation>&amp;Excluir</translation>
     </message>
     <message>
         <source>Context</source>
@@ -473,11 +473,11 @@ Este valor permite que você especifique o número máximo de usuárias permitid
     <name>ALSAEnumerator</name>
     <message>
         <source>Getting name (longname) of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Identificar nome (nome longo) da placa de som falhou: %1</translation>
     </message>
     <message>
         <source>Getting name of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao obter o nome da placa de som: %1</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Este valor permite que você especifique o número máximo de usuárias permitid
     </message>
     <message>
         <source>&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;%3&lt;/p&gt;&lt;p&gt;&lt;b&gt;An Open Source, low-latency, high quality voice-chat utility&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;%3&lt;/p&gt;&lt;p&gt;Tradução para o Português do Brasil por&lt;br /&gt;Morris Arozi Moraes &lt;morrisarozi@gmail.com&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Uma utilidade de conversa por voz para gamers&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;%3&lt;/p&gt;&lt;p&gt;&lt;b&gt;Um programa de chamadas de voz de alta qualidade e baixa latência de Código Aberto&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1215,10 +1215,6 @@ Este valor permite que você especifique o número máximo de usuárias permitid
         <translation>&lt;b&gt;Isto configura a margem mínima de segurança para o buffer jitter.&lt;/b&gt;&lt;br /&gt;Todo áudio recebido é armazenado em buffer, e o buffer jitter busca continuamente empurrar o buffer para o tamanho mínimo suportado pela sua rede, diminuindo a latência. Configure o tamanho do buffer para o menor possível. Se o começo das frases recebidas é muito irregular, aumente esse valor.</translation>
     </message>
     <message>
-        <source>Minimum distance to user before sound volume decreases</source>
-        <translation>Distância mínima da usuária antes que o volume do som diminua</translation>
-    </message>
-    <message>
         <source>This sets the minimum distance for sound calculations. The volume of other users&apos; speech will not decrease until they are at least this far away from you.</source>
         <translation>Configura a distância mínima para cálculos de som. O volume da fala das usuárias não irá diminuir antes de, no mínimo, esta distância de você.</translation>
     </message>
@@ -1256,10 +1252,6 @@ Este valor permite que você especifique o número máximo de usuárias permitid
         <translation>Os &quot;alto-falantes&quot; conectados são na realidade fones de ouvido</translation>
     </message>
     <message>
-        <source>Factor for sound volume decrease</source>
-        <translation>Fator para redução do volume</translation>
-    </message>
-    <message>
         <source>Bloom</source>
         <translation>Floração</translation>
     </message>
@@ -1290,10 +1282,6 @@ Este valor permite que você especifique o número máximo de usuárias permitid
     <message>
         <source>Maximum Distance</source>
         <translation>Distância Máxima</translation>
-    </message>
-    <message>
-        <source>Maximum distance, beyond which speech volume won&apos;t decrease</source>
-        <translation>Distância máxima, depois da qual o volume da fala não diminuirá</translation>
     </message>
     <message>
         <source>Minimum Volume</source>
@@ -1440,6 +1428,14 @@ Este valor permite que você especifique o número máximo de usuárias permitid
         <source>Attenuation</source>
         <translation>Atenuação</translation>
     </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
+    </message>
+    <message>
+        <source> m</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AudioOutputDialog</name>
@@ -1466,10 +1462,6 @@ Este valor permite que você especifique o número máximo de usuárias permitid
     <message>
         <source>%1 %</source>
         <translation>%1 %</translation>
-    </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 m</translation>
     </message>
     <message>
         <source>Output system</source>
@@ -1522,6 +1514,22 @@ Este valor permite que você especifique o número máximo de usuárias permitid
     <message>
         <source>Loopback</source>
         <translation>Loopback</translation>
+    </message>
+    <message>
+        <source>Distance at which audio volume from another player starts decreasing</source>
+        <translation>Distância na qual o volume de áudio de outro jogador começa a diminuir</translation>
+    </message>
+    <message>
+        <source>Distance at which a player&apos;s audio volume has reached its minimum value</source>
+        <translation>Distância na qual o volume de áudio de um jogador atingiu seu valor mínimo</translation>
+    </message>
+    <message>
+        <source>The minimum volume a player&apos;s audio will fade out to with increasing distance. Set to 0% for it to fade into complete silence for a realistic maximum hearing distance.</source>
+        <translation>O volume mínimo de áudio de um jogador diminuirá com o aumento da distância. Defina como 0% para desvanecer em silêncio total para uma distância de audição máxima realista.</translation>
+    </message>
+    <message>
+        <source>If an audio source is close enough, blooming will cause the audio to be played on all speakers more or less regardless of their position (albeit with lower volume)</source>
+        <translation>Se uma fonte de áudio estiver próxima o suficiente, blooming fará com que o áudio seja reproduzido em todos os alto-falantes, mais ou menos, independentemente de sua posição (embora com volume mais baixo)</translation>
     </message>
 </context>
 <context>
@@ -3262,11 +3270,11 @@ Etiqueta do favorito. É como o favorito será exibido na lista de favoritos, e 
     </message>
     <message>
         <source>HTTP error %1: &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro HTTP %1: &quot;%2&quot;</translation>
     </message>
     <message>
         <source>Internal error encountered in CrashReporter.cpp: Received network reply does not contain an HTTP status code. Please inform a developer about error code %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha interna encontrada em CrashReporter.cpp: A resposta recebida da rede não contém um código de status HTTP. Por favor, informe à um desenvolvedor sobre o erro de código %1</translation>
     </message>
 </context>
 <context>
@@ -3374,14 +3382,6 @@ Etiqueta do favorito. É como o favorito será exibido na lista de favoritos, e 
         <translation>Motores de Atalho Adicionais</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Enable Windows hooks&lt;/b&gt;.&lt;br /&gt;This enables the Windows hooks shortcut engine. Using this engine allows Mumble to suppress keypresses and mouse clicks.</source>
-        <translation>&lt;b&gt;Ativar ganchos de janela&lt;/b&gt;.&lt;br /&gt;Isso permite ganchos de Janela no motor de atalho. Usar esse motor permite ao Mumble suprimir pressionamento de teclas e cliques de mouse.</translation>
-    </message>
-    <message>
-        <source>Enable Windows hooks</source>
-        <translation>Permitir gatilhos de janela</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Enable GKey&lt;/b&gt;.&lt;br /&gt;This setting enables support for the GKey shortcut engine, for &quot;G&quot;-keys found on Logitech keyboards.</source>
         <translation>&lt;b&gt;Ativar GKey&lt;/b&gt;.&lt;br /&gt;Essa opção ativa o suporte para o motor de atalhos GKey, para &quot;G&quot;-keys/teclas encontradas em teclados Logitech.</translation>
     </message>
@@ -3422,7 +3422,7 @@ Sem essa opção ativada, usar os atalhos globais do Mumble em aplicações priv
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Starts the capture process: all buttons you press will be added to the tree.&lt;/p&gt;&lt;p&gt;Once all buttons are released, the capture process stops automatically.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Inicia o processo de captura: todos os botões que você pressionar serão adicionados à árvore.&lt;/p&gt;&lt;p&gt;Assim que todos os botões forem soltos, o processo de captura será interrompido automaticamente.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add</source>
@@ -3969,10 +3969,6 @@ Este campo descreve o tamanho de um dispositivo LCD. O tamanho é dado em pixels
         <translation> Caracteres</translation>
     </message>
     <message>
-        <source>Whisper</source>
-        <translation>Sussurro</translation>
-    </message>
-    <message>
         <source>If checked you will only hear whispers from users you added to your friend list.</source>
         <translation>Se marcado você só ouvirá sussurros de usuários na sua lista de amigos.</translation>
     </message>
@@ -4055,6 +4051,42 @@ Essa configuração só se aplica para novas mensagens. As mensagens já exibida
     <message>
         <source>Chat message margins</source>
         <translation>Margens de mensagens de chat</translation>
+    </message>
+    <message>
+        <source>Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Misc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of users that will trigger message limiting functionality.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>users on the server.</source>
+        <translation>usuários no servidor.</translation>
+    </message>
+    <message>
+        <source>Limit notifications when there are more than</source>
+        <translation>Limitar notificações quando houver mais que</translation>
+    </message>
+    <message>
+        <source>User limit for message limiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click here to toggle message limiting for all events - If using this option be sure to change the user limit below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle message limiting behavior for %1 events </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click here to toggle limiting for %1 events. &lt;br /&gt; If checked, notifications for this event typewill not be played when the user count on the server exceeds the set threshold.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4469,6 +4501,30 @@ Essa configuração só se aplica para novas mensagens. As mensagens já exibida
         <source>Show nicknames only</source>
         <translation>Mostrar somente apelidos</translation>
     </message>
+    <message>
+        <source>Channel Hierarchy String</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action to perform when a user is activated (via double-click or enter) in the search dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action (User):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action to perform when a channel is activated (via double-click or enter) in the search dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action (Channel):</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -4803,10 +4859,6 @@ Essa configuração só se aplica para novas mensagens. As mensagens já exibida
     <message>
         <source>Push-to-Talk</source>
         <translation>Pressionar-para-Falar</translation>
-    </message>
-    <message>
-        <source>Mumble - Minimal View -- %1</source>
-        <translation>Mumble - Visão Mínima -- %1</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5868,10 +5920,6 @@ seu certificado e nome de usuário.</translation>
         <translation>&amp;Filtro ativo/inativo</translation>
     </message>
     <message>
-        <source>Toggle the channel filter (Ctrl+F)</source>
-        <translation>Alternar o filtro de canais (Ctrl+F)</translation>
-    </message>
-    <message>
         <source>Enable or disable the filtering of select channels.
 By default all empty channels will be filtered.
 You can mark additional channels for filtering from
@@ -6226,6 +6274,10 @@ Valid options are:
                 Specify an alternative configuration file.
                 If you use this to run multiple instances of Mumble at once,
                 make sure to set an alternative &apos;database&apos; value in the config.
+  --default-certificate-dir &lt;dir&gt;
+                Specify an alternative default certificate path.
+                This path is only used if there is no certificate loaded
+                from the settings.
   -n, --noidentity
                 Suppress loading of identity files (i.e., certificates.)
   -jn, --jackname &lt;arg&gt;
@@ -6264,6 +6316,70 @@ Valid options are:
                 Otherwise the locale will be permanently saved to
                 Mumble&apos;s settings.
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Directory %1 does not exist.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle TalkingUI</source>
+        <comment>Global shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggles the visibility of the TalkingUI.</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished">Alterna a visibilidade da UI de Falantes.</translation>
+    </message>
+    <message>
+        <source>Toggle the channel filter (Alt+F)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for a user or channel (Ctrl+F)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle search dialog</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will open or close the search dialog depending on whether it is currently opened already</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unmute yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undeafen yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positional &amp;Audio Viewer...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the Positional Audio Viewer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shows the Positional Audio Viewer. In it the current information used for positional audio can be inspected. Context and identity are also shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble - Minimal View</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7216,14 +7332,6 @@ Para atualizar estes arquivos para suas últimas versões, clique no botão abai
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Found more than one plugin library for the current OS in &quot;%1&quot; (&quot;%2&quot; and &quot;%3&quot;)!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to find a plugin for the current OS in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to load plugin &quot;%1&quot; - check the plugin interface!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7237,6 +7345,30 @@ Para atualizar estes arquivos para suas últimas versões, clique no botão abai
     </message>
     <message>
         <source>Unable to move plugin library to &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to locate the plugin manifest (manifest.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error while processing manifest: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find plugin for the current OS (&quot;%1&quot;) and architecture (&quot;%2&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to locate plugin library specified in manifest (&quot;%1&quot;) in the bundle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overwrite plugin?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new plugin &quot;%1&quot; (%2) is about to overwrite the already installed plugin &quot;%3&quot; (%4). Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7311,6 +7443,61 @@ Para atualizar estes arquivos para suas últimas versões, clique no botão abai
     <message>
         <source>Default device</source>
         <translation>Dispositivo padrão</translation>
+    </message>
+</context>
+<context>
+    <name>PositionalAudioViewer</name>
+    <message>
+        <source>Positional Audio Viewer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <source>Y</source>
+        <translation type="unfinished">Y</translation>
+    </message>
+    <message>
+        <source>Z</source>
+        <translation type="unfinished">Z</translation>
+    </message>
+    <message>
+        <source>Player position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Context</source>
+        <translation type="unfinished">Contexto</translation>
+    </message>
+    <message>
+        <source>Identity</source>
+        <translation type="unfinished">Identidade</translation>
     </message>
 </context>
 <context>
@@ -7582,6 +7769,72 @@ Consulte a &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot
     <message>
         <source>Text</source>
         <translation>Texto</translation>
+    </message>
+</context>
+<context>
+    <name>Search::SearchDialog</name>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">Nenhum</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter search String...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Opções</translation>
+    </message>
+    <message>
+        <source>Whether to search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the search should be performed case-sensitively</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case-&amp;sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the search string should be interpreted as a regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;RegEx</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether to search for channels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

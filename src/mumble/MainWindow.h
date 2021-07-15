@@ -36,7 +36,11 @@ class Tokens;
 class Channel;
 class UserInformation;
 class VoiceRecorderDialog;
+class PositionalAudioViewer;
 class PTTButtonWidget;
+namespace Search {
+class SearchDialog;
+};
 
 struct ShortcutTarget;
 
@@ -84,6 +88,9 @@ public:
 	GlobalShortcut *gsCycleTransmitMode, *gsToggleMainWindowVisibility, *gsTransmitModePushToTalk,
 		*gsTransmitModeContinuous, *gsTransmitModeVAD;
 	GlobalShortcut *gsSendTextMessage, *gsSendClipboardTextMessage;
+	GlobalShortcut *gsToggleTalkingUI;
+	GlobalShortcut *gsToggleSearch;
+
 	DockTitleBar *dtbLogDockTitle, *dtbChatDockTitle;
 
 	ACLEditor *aclEdit;
@@ -115,6 +122,7 @@ public:
 	void msgBox(QString msg);
 	void setOnTop(bool top);
 	void setShowDockTitleBars(bool doShow);
+	void updateAudioToolTips();
 	void updateTrayIcon();
 	void updateUserModel();
 	void focusNextMainWidget();
@@ -155,11 +163,15 @@ protected:
 	int iTargetCounter;
 	QMap< unsigned int, UserInformation * > qmUserInformations;
 
+	std::unique_ptr< PositionalAudioViewer > m_paViewer;
+
 	PTTButtonWidget *qwPTTButtonWidget;
 
 	MUComboBox *qcbTransmitMode;
 	QAction *qaTransmitMode;
 	QAction *qaTransmitModeSeparator;
+
+	Search::SearchDialog *m_searchDialog = nullptr;
 
 	void createActions();
 	void setupGui();
@@ -199,7 +211,7 @@ public slots:
 	void on_qaSelfComment_triggered();
 	void on_qaSelfRegister_triggered();
 	void qcbTransmitMode_activated(int index);
-	void updateTransmitModeComboBox();
+	void updateTransmitModeComboBox(Settings::AudioTransmit newMode);
 	void qmUser_aboutToShow();
 	void qmListener_aboutToShow();
 	void on_qaUserCommentReset_triggered();
@@ -250,6 +262,7 @@ public slots:
 	void on_qaConfigCert_triggered();
 	void on_qaAudioWizard_triggered();
 	void on_qaDeveloperConsole_triggered();
+	void on_qaPositionalAudioViewer_triggered();
 	void on_qaHelpWhatsThis_triggered();
 	void on_qaHelpAbout_triggered();
 	void on_qaHelpAboutQt_triggered();
@@ -279,6 +292,8 @@ public slots:
 	void on_gsTransmitModeVAD_triggered(bool, QVariant);
 	void on_gsSendTextMessage_triggered(bool, QVariant);
 	void on_gsSendClipboardTextMessage_triggered(bool, QVariant);
+	void on_gsToggleTalkingUI_triggered(bool, QVariant);
+	void on_gsToggleSearch_triggered(bool, QVariant);
 	void on_Reconnect_timeout();
 	void on_Icon_activated(QSystemTrayIcon::ActivationReason);
 	void on_qaTalkingUIToggle_triggered();
@@ -312,6 +327,7 @@ public slots:
 	/// Updates the user's image directory to the given path (any included
 	/// filename is discarded).
 	void updateImagePath(QString filepath) const;
+	void setTransmissionMode(Settings::AudioTransmit mode);
 	/// Sets the local user's mute state
 	///
 	/// @param mute Whether to mute the user
@@ -320,6 +336,9 @@ public slots:
 	///
 	/// @param deaf Whether to deafen the user
 	void setAudioDeaf(bool deaf);
+	// Callback the search action being triggered
+	void on_qaSearch_triggered();
+	void toggleSearchDialogVisibility();
 signals:
 	/// Signal emitted when the server and the client have finished
 	/// synchronizing (after a new connection).
@@ -328,6 +347,7 @@ signals:
 	void userAddedChannelListener(ClientUser *user, Channel *channel);
 	/// Signal emitted whenever a user removes a ChannelListener
 	void userRemovedChannelListener(ClientUser *user, Channel *channel);
+	void transmissionModeChanged(Settings::AudioTransmit newMode);
 
 public:
 	MainWindow(QWidget *parent);

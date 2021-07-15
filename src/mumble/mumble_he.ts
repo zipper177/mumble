@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>This revokes the %1 privilege. If a privilege is both allowed and denied, it is denied.&lt;br /&gt;%2</source>
-        <translation>פעולה זו מבטלת הרשאת %1. אם הרשאה הינה מאופשרת וגם מבוטלת בו-זמנית, היא תבוטל.&lt;/br&gt;%2</translation>
+        <translation>פעולה זו מבטלת הרשאת %1. אם הרשאה מאופשרת ונדחית בו־זמנית, היא תידחה.&lt;br /&gt;%2</translation>
     </message>
     <message>
         <source>Dialog</source>
@@ -395,96 +395,97 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     </message>
     <message>
         <source>Maximum Users</source>
-        <translation>מספר משתמשים מקסימלי</translation>
+        <translation>מספר משתמשים מרבי</translation>
     </message>
     <message>
         <source>Maximum number of users allowed in the channel</source>
-        <translation type="unfinished"></translation>
+        <translation>מספר המשתמש המרבי המותר בערוץ</translation>
     </message>
     <message>
         <source>&lt;b&gt;Maximum Users&lt;/b&gt;&lt;br /&gt;
 This value allows you to set the maximum number of users allowed in the channel. If the value is above zero, only that number of users will be allowed to enter the channel. If the value is zero, the maximum number of users in the channel is given by the server&apos;s default limit.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;מספר משתמשים מרבי&lt;/b&gt;&lt;br/&gt;
+הערך הזה מאפשר להגדיר את מספר המשתמשים המרבי בערוץ. אם הערך גדול מאפס, רק אותו המספר של משתמשים יוכלו להיכנס לערוץ. אם הערך הוא אפס, מספר המשתמשים המרבי יוגדר על ידי מגבלת ברירת המחדל של השרת.</translation>
     </message>
     <message>
         <source>This is the sort order for the channel.</source>
-        <translation type="unfinished"></translation>
+        <translation>זהו סדר המיון של הערוץ.</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>מאפיינים</translation>
     </message>
     <message>
         <source>Channel password</source>
-        <translation type="unfinished"></translation>
+        <translation>סיסמת ערוץ</translation>
     </message>
     <message>
         <source>Maximum users</source>
-        <translation type="unfinished"></translation>
+        <translation>מספר משתמשים מרבי</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation type="unfinished"></translation>
+        <translation>שם ערוץ</translation>
     </message>
     <message>
         <source>Inherited group members</source>
-        <translation type="unfinished"></translation>
+        <translation>חברי קבוצה שנורשו</translation>
     </message>
     <message>
         <source>Foreign group members</source>
-        <translation type="unfinished"></translation>
+        <translation>חברי קבוצה זרים</translation>
     </message>
     <message>
         <source>Inherited channel members</source>
-        <translation type="unfinished"></translation>
+        <translation>חברי ערוץ שנורשו</translation>
     </message>
     <message>
         <source>Add members to group</source>
-        <translation type="unfinished"></translation>
+        <translation>הוספת חברים לקבוצה</translation>
     </message>
     <message>
         <source>List of ACL entries</source>
-        <translation type="unfinished"></translation>
+        <translation>רשימת כללי בקרת גישה</translation>
     </message>
 </context>
 <context>
     <name>ALSAAudioInput</name>
     <message>
         <source>Default ALSA Card</source>
-        <translation>כרטיס ALSA משתמט</translation>
+        <translation>כרטיס ALSA כברירת מחדל</translation>
     </message>
     <message>
         <source>Opening chosen ALSA Input failed: %1</source>
-        <translation>פתיחת קלט ה-ALSA שנבחר נכשלה: %1</translation>
+        <translation>פתיחת קלט ה־ALSA שנבחר נכשלה: %1</translation>
     </message>
 </context>
 <context>
     <name>ALSAAudioOutput</name>
     <message>
         <source>Default ALSA Card</source>
-        <translation>כרטיס ALSA משתמט</translation>
+        <translation>כרטיס ALSA כברירת מחדל</translation>
     </message>
     <message>
         <source>Opening chosen ALSA Output failed: %1</source>
-        <translation>פתיחת פלט ה-ALSA שנבחר נכשלה: %1</translation>
+        <translation>פתיחת פלט ה־ALSA שנבחר נכשלה: %1</translation>
     </message>
 </context>
 <context>
     <name>ALSAEnumerator</name>
     <message>
         <source>Getting name (longname) of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>משיכת השם (הארוך) של כרטיס הקול נכשלה: %1</translation>
     </message>
     <message>
         <source>Getting name of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>משיכת שם כרטיס הקול נכשלה: %1</translation>
     </message>
 </context>
 <context>
     <name>ASIOConfig</name>
     <message>
         <source>%1 (version %2)</source>
-        <translation>%1 (גירסא %2)</translation>
+        <translation>%1 (גירסה %2)</translation>
     </message>
     <message>
         <source>%1 -&gt; %2 samples buffer, with %3 sample resolution (%4 preferred) at %5 Hz</source>
@@ -525,8 +526,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>This queries the selected device for channels. Be aware that many ASIO drivers are buggy to the extreme, and querying them might cause a crash of either the application or the system.</source>
-        <translation>אפשרות זו תתשאל את ההתקן על הערוצים שבו. שים לב שמנהלי התקנים רבים של ASIO עדיין מלאים בתקלות, ולכן ייתכן שתשאול שלהם יגרום לתוכנה או למערכת כולה לקרוס.
-</translation>
+        <translation>אפשרות זו תתשאל את ההתקן על הערוצים שבו. מוטב לשים לב שמנהלי התקנים רבים של ASIO עדיין מלאים בתקלות ולכן ייתכן שתשאולם יגרום לתוכנית או למערכת כולה לקרוס.</translation>
     </message>
     <message>
         <source>&amp;Query</source>
@@ -590,33 +590,33 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>List of microphones</source>
-        <translation type="unfinished"></translation>
+        <translation>רשימת מיקרופונים</translation>
     </message>
     <message>
         <source>List of speakers</source>
-        <translation type="unfinished"></translation>
+        <translation>רשימת רמקולים</translation>
     </message>
 </context>
 <context>
     <name>ASIOInput</name>
     <message>
         <source>You need to select at least one microphone and one speaker source to use ASIO.</source>
-        <translation type="unfinished"></translation>
+        <translation>צריך לבחור לפחות מיקרופון אחד ורמקול אחד לשימוש ASIO.</translation>
     </message>
     <message>
         <source>Opening selected ASIO device failed. No input will be done.</source>
-        <translation>פתיחת התקן ה-ASIO הנבחר נכשלה. לא יבוצע קלט.</translation>
+        <translation>פתיחת התקן ה־ASIO הנבחר נכשלה. לא יבוצע קלט.</translation>
     </message>
 </context>
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About Mumble</source>
-        <translation>אודות Mumble</translation>
+        <translation>על אודות Mumble</translation>
     </message>
     <message>
         <source>&amp;About Mumble</source>
-        <translation>&amp;אודות Mumble</translation>
+        <translation>על &amp;אודות Mumble</translation>
     </message>
     <message>
         <source>&amp;License</source>
@@ -624,11 +624,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>A&amp;uthors</source>
-        <translation type="unfinished"></translation>
+        <translation>יו&amp;צרים</translation>
     </message>
     <message>
         <source>&amp;Third-Party Licenses</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;רשיונות צד שלישי</translation>
     </message>
     <message>
         <source>OK</source>
@@ -636,19 +636,19 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>License agreement</source>
-        <translation type="unfinished"></translation>
+        <translation>הסכם רשיון</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>יוצרים</translation>
     </message>
     <message>
         <source>Third-party license agreements</source>
-        <translation type="unfinished"></translation>
+        <translation>הסכם רשיון צד שלישי</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;%3&lt;/p&gt;&lt;p&gt;&lt;b&gt;An Open Source, low-latency, high quality voice-chat utility&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Mumble (%1)&lt;/h3&gt;&lt;p&gt;%3&lt;/p&gt;&lt;p&gt;&lt;b&gt;צ׳אט קולי בקוד פתוח, איכות גבוהה וזמן המתנה נמוך&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%2&quot;&gt;%2&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -967,7 +967,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Echo Cancellation</source>
-        <translation type="unfinished"></translation>
+        <translation>ביטול הד</translation>
     </message>
     <message>
         <source>The idle action will be reversed upon any key or mouse button input</source>
@@ -979,7 +979,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Audio input</source>
-        <translation type="unfinished"></translation>
+        <translation>כניסת שמע</translation>
     </message>
     <message>
         <source>&lt;b&gt;This is the input method to use for audio.&lt;/b&gt;</source>
@@ -1216,10 +1216,6 @@ This value allows you to set the maximum number of users allowed in the channel.
         <translation>&lt;b&gt;אפשרות זו מגדירה את שולי הביטחון עבור אגירת הריצוד.&lt;/b&gt;&lt;br /&gt;כל הצלילים הנכנסים נאגרים, ואגירת הריצוד מנסה באופן מתמשך להקטין את המאגר הזה למינימום האפשרי ברשת שלך, כך שאחזור בדיבור יהיה קטן ככל האפשר. אפשרות זו מגדירה את גודל האגירה המינימלי לשימוש. אם תחילת הדיבור של משתמשים אחרים מקוטעת, יש להגדיל את הערך הזה.</translation>
     </message>
     <message>
-        <source>Minimum distance to user before sound volume decreases</source>
-        <translation>מרחק מינימלי עד משתמש אחר טרם ירידה בעוצמת קול</translation>
-    </message>
-    <message>
         <source>This sets the minimum distance for sound calculations. The volume of other users&apos; speech will not decrease until they are at least this far away from you.</source>
         <translation>אפשרות זו קובעת את המרחק המינימלי לחישובי קול. עוצמת הקול של הדיבור של המשתמש האחר לא יונמך עד אשר המרחק בינכם יהיה לפחות הערך שנקבע כאן.</translation>
     </message>
@@ -1257,10 +1253,6 @@ This value allows you to set the maximum number of users allowed in the channel.
         <translation>הרמקולים המחוברים הם למעשה אוזניות</translation>
     </message>
     <message>
-        <source>Factor for sound volume decrease</source>
-        <translation>הערך להפחתת עוצמת הקול</translation>
-    </message>
-    <message>
         <source>Bloom</source>
         <translation>הגברה</translation>
     </message>
@@ -1291,10 +1283,6 @@ This value allows you to set the maximum number of users allowed in the channel.
     <message>
         <source>Maximum Distance</source>
         <translation>מרחק מקסימלי</translation>
-    </message>
-    <message>
-        <source>Maximum distance, beyond which speech volume won&apos;t decrease</source>
-        <translation>המרחק מקסימלי שאחריו עוצמת הקול לא תונמך עוד</translation>
     </message>
     <message>
         <source>Minimum Volume</source>
@@ -1441,6 +1429,14 @@ This value allows you to set the maximum number of users allowed in the channel.
         <source>Attenuation</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> m</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AudioOutputDialog</name>
@@ -1467,10 +1463,6 @@ This value allows you to set the maximum number of users allowed in the channel.
     <message>
         <source>%1 %</source>
         <translation>%1 %</translation>
-    </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 מ</translation>
     </message>
     <message>
         <source>Output system</source>
@@ -1522,6 +1514,22 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Loopback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance at which audio volume from another player starts decreasing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance at which a player&apos;s audio volume has reached its minimum value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The minimum volume a player&apos;s audio will fade out to with increasing distance. Set to 0% for it to fade into complete silence for a realistic maximum hearing distance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If an audio source is close enough, blooming will cause the audio to be played on all speakers more or less regardless of their position (albeit with lower volume)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1866,8 +1874,7 @@ Mumble is under continuous development, and the development team wants to focus 
     </message>
     <message>
         <source>Tuning microphone hardware volume to optimal settings.</source>
-        <translation>&lt;p dir=&quot;RTL&quot;&gt;כיוונון הווליום של המיקרופון לרמה האופטימלית.&lt;/p&gt;
-</translation>
+        <translation>&lt;p dir=&quot;RTL&quot;&gt;כיוונון עצמת השמע של המיקרופון לרמה המיטבית.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Now talk softly, as you would when talking late at night and you don&apos;t want to disturb anyone. Adjust the slider below so that the bar moves into green when you talk, but stays blue while you&apos;re silent.</source>
@@ -2030,7 +2037,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     </message>
     <message>
         <source>This configuration is only recommended for use in setups where bandwidth is not an issue, like a LAN. It provides the lowest latency supported by Mumble and &lt;b&gt;high quality&lt;/b&gt;. (72kbit/s, 10ms per packet)</source>
-        <translation>ההגדרה הזאת מומלצת רק במקרים שבהם רוחב פס אינו יכול להוות בעיה, כמו רשת מקומית (LAN). היא מספקת את האחזור הנמוך ביותר על ידי Mumble תומך בה ו&lt;b&gt;איכות גבוהה&lt;/b&gt;. (72 קב&quot;ש, 10 10 מ&quot;ש לחבילה)</translation>
+        <translation>ההגדרה הזאת מומלצת רק במקרים שבהם רוחב פס אינו יכול להוות בעיה, כמו רשת מקומית (LAN). היא מספקת את העיכוב הנמוך ביותר ש־Mumble תומך בו ו&lt;b&gt;איכות גבוהה&lt;/b&gt;. (72 קב״ש, 10 מ״ש לחבילה)</translation>
     </message>
     <message>
         <source>&lt;b&gt;This is the input method to use for audio.&lt;/b&gt;</source>
@@ -2691,7 +2698,7 @@ Are you sure you wish to replace your certificate?
     </message>
     <message>
         <source>This represents the permission to permanently remove users from the server.</source>
-        <translation>מייצג את ההרשאה לנדות (להשעות) משתמשים מהשרת. </translation>
+        <translation>מייצג את ההרשאה להדיח משתמשים מהשרת לצמיתות.</translation>
     </message>
     <message>
         <source>This represents the permission to register and unregister users on the server.</source>
@@ -3368,14 +3375,6 @@ Label of the server. This is what the server will be named like in your server l
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Enable Windows hooks&lt;/b&gt;.&lt;br /&gt;This enables the Windows hooks shortcut engine. Using this engine allows Mumble to suppress keypresses and mouse clicks.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Windows hooks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Enable GKey&lt;/b&gt;.&lt;br /&gt;This setting enables support for the GKey shortcut engine, for &quot;G&quot;-keys found on Logitech keyboards.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3960,10 +3959,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation> תווים</translation>
     </message>
     <message>
-        <source>Whisper</source>
-        <translation>לחש</translation>
-    </message>
-    <message>
         <source>If checked you will only hear whispers from users you added to your friend list.</source>
         <translation>אם מסומן, אתה תשמע לחישות רק ממשתמשים שהוספת לרשימת החברים שלך.</translation>
     </message>
@@ -4043,6 +4038,42 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>Chat message margins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Misc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of users that will trigger message limiting functionality.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>users on the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limit notifications when there are more than</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User limit for message limiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click here to toggle message limiting for all events - If using this option be sure to change the user limit below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle message limiting behavior for %1 events </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click here to toggle limiting for %1 events. &lt;br /&gt; If checked, notifications for this event typewill not be played when the user count on the server exceeds the set threshold.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4458,6 +4489,30 @@ The setting only applies for new messages, the already shown ones will retain th
         <source>Show nicknames only</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Channel Hierarchy String</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action to perform when a user is activated (via double-click or enter) in the search dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action (User):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action to perform when a channel is activated (via double-click or enter) in the search dialog.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action (Channel):</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -4551,7 +4606,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>Mumble is currently connected to a server. Do you want to Close or Minimize it?</source>
-        <translation>&lt;p dir=&quot;RTL&quot;&gt;‫Mumble מחוברת כרגע לשרת, האם ברצונך לסגור או למזער אותה?&lt;/p&gt;</translation>
+        <translation>&lt;p dir=&quot;RTL&quot;&gt;‫Mumble מחוברת כרגע לשרת, לסגור או למזער אותה?&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Mute Self</source>
@@ -4792,10 +4847,6 @@ The setting only applies for new messages, the already shown ones will retain th
     <message>
         <source>Push-to-Talk</source>
         <translation>לחץ-כדי-לדבר</translation>
-    </message>
-    <message>
-        <source>Mumble - Minimal View -- %1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5544,7 +5595,7 @@ Otherwise abort and check your certificate and username.</source>
     </message>
     <message>
         <source>%1 revoked priority speaker status for %2.</source>
-        <translation>%1 ביטל את עדיפות הדיבור של %2 </translation>
+        <translation>%1 שלל את עדיפות הדיבור של %2.</translation>
     </message>
     <message>
         <source>%1 gave priority speaker status to %2.</source>
@@ -5679,7 +5730,7 @@ Otherwise abort and check your certificate and username.</source>
     </message>
     <message>
         <source>You were moved to %1 by %2.</source>
-        <translation>&lt;p dir=&quot;RTL&quot;&gt;הועברת אל  %1 על ידי %2.&lt;/p&gt;</translation>
+        <translation>&lt;p dir=&quot;RTL&quot;&gt;הועברת אל %1 על ידי %2.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>%1 entered channel.</source>
@@ -5850,10 +5901,6 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <source>&amp;Filter on/off</source>
         <translation>הדלק/כבה &amp;מסננת</translation>
-    </message>
-    <message>
-        <source>Toggle the channel filter (Ctrl+F)</source>
-        <translation>&lt;p dir=&quot;RTL&quot;&gt;הפעל או בטל את מסנן הערוצים (Ctrl+F)&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Enable or disable the filtering of select channels.
@@ -6208,6 +6255,10 @@ Valid options are:
                 Specify an alternative configuration file.
                 If you use this to run multiple instances of Mumble at once,
                 make sure to set an alternative &apos;database&apos; value in the config.
+  --default-certificate-dir &lt;dir&gt;
+                Specify an alternative default certificate path.
+                This path is only used if there is no certificate loaded
+                from the settings.
   -n, --noidentity
                 Suppress loading of identity files (i.e., certificates.)
   -jn, --jackname &lt;arg&gt;
@@ -6246,6 +6297,70 @@ Valid options are:
                 Otherwise the locale will be permanently saved to
                 Mumble&apos;s settings.
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Directory %1 does not exist.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle TalkingUI</source>
+        <comment>Global shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggles the visibility of the TalkingUI.</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle the channel filter (Alt+F)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for a user or channel (Ctrl+F)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle search dialog</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will open or close the search dialog depending on whether it is currently opened already</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unmute yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undeafen yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positional &amp;Audio Viewer...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the Positional Audio Viewer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shows the Positional Audio Viewer. In it the current information used for positional audio can be inspected. Context and identity are also shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble - Minimal View</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7197,14 +7312,6 @@ To upgrade these files to their latest versions, click the button below.</source
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Found more than one plugin library for the current OS in &quot;%1&quot; (&quot;%2&quot; and &quot;%3&quot;)!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to find a plugin for the current OS in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to load plugin &quot;%1&quot; - check the plugin interface!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7218,6 +7325,30 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <source>Unable to move plugin library to &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to locate the plugin manifest (manifest.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error while processing manifest: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to find plugin for the current OS (&quot;%1&quot;) and architecture (&quot;%2&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to locate plugin library specified in manifest (&quot;%1&quot;) in the bundle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overwrite plugin?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new plugin &quot;%1&quot; (%2) is about to overwrite the already installed plugin &quot;%3&quot; (%4). Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7291,6 +7422,61 @@ To upgrade these files to their latest versions, click the button below.</source
     <name>PortAudioSystem</name>
     <message>
         <source>Default device</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PositionalAudioViewer</name>
+    <message>
+        <source>Positional Audio Viewer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Camera position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Context</source>
+        <translation type="unfinished">הקשר</translation>
+    </message>
+    <message>
+        <source>Identity</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7561,6 +7747,72 @@ See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;th
     <message>
         <source>Text</source>
         <translation>טקסט</translation>
+    </message>
+</context>
+<context>
+    <name>Search::SearchDialog</name>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchDialog</name>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter search String...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">אפשרויות</translation>
+    </message>
+    <message>
+        <source>Whether to search for users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the search should be performed case-sensitively</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case-&amp;sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the search string should be interpreted as a regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;RegEx</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search for:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether to search for channels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7913,7 +8165,7 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>הס&amp;ר</translation>
+        <translation>הס&amp;רה</translation>
     </message>
     <message>
         <source>Tokens</source>

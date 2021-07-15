@@ -26,7 +26,6 @@ protected:
 	bool bOk;
 	QMutex qmWait;
 	QLibrary qlPortAudio;
-	QWaitCondition qwcWait;
 
 	static int streamCallback(const void *input, void *output, unsigned long frames, const PaStreamCallbackTimeInfo *,
 							  PaStreamCallbackFlags statusFlags, void *isInput);
@@ -51,7 +50,7 @@ protected:
 	const PaDeviceInfo *(*Pa_GetDeviceInfo)(PaDeviceIndex device);
 
 public:
-	const QList< audioDevice > enumerateDevices(const bool input, const PaDeviceIndex current);
+	const QList< audioDevice > enumerateDevices(const bool input);
 
 	bool isStreamRunning(PaStream *stream);
 

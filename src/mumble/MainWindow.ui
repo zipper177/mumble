@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
+    <width>735</width>
     <height>435</height>
    </rect>
   </property>
@@ -47,8 +47,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>671</width>
-     <height>30</height>
+     <width>735</width>
+     <height>32</height>
     </rect>
    </property>
    <widget class="QMenu" name="qmConfig">
@@ -185,6 +185,8 @@
    <addaction name="qaConfigDialog"/>
    <addaction name="separator"/>
    <addaction name="qaFilterToggle"/>
+   <addaction name="separator"/>
+   <addaction name="qaSearch"/>
   </widget>
   <action name="qaQuit">
    <property name="text">
@@ -479,9 +481,6 @@
    <property name="text">
     <string>&amp;Mute Self</string>
    </property>
-   <property name="toolTip">
-    <string>Mute yourself</string>
-   </property>
    <property name="whatsThis">
     <string>Mute or unmute yourself. When muted, you will not send any data to the server. Unmuting while deafened will also undeafen.</string>
    </property>
@@ -501,9 +500,6 @@
    </property>
    <property name="text">
     <string>&amp;Deafen Self</string>
-   </property>
-   <property name="toolTip">
-    <string>Deafen yourself</string>
    </property>
    <property name="whatsThis">
     <string>Deafen or undeafen yourself. When deafened, you will not hear anything. Deafening yourself will also mute.</string>
@@ -583,7 +579,7 @@
     <string>&amp;Filter on/off</string>
    </property>
    <property name="toolTip">
-    <string>Toggle the channel filter (Ctrl+F)</string>
+    <string>Toggle the channel filter (Alt+F)</string>
    </property>
    <property name="whatsThis">
     <string>Enable or disable the filtering of select channels.
@@ -592,7 +588,7 @@ You can mark additional channels for filtering from
 the channel's context menu.</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+F</string>
+    <string>Alt+F</string>
    </property>
    <property name="iconVisibleInMenu">
     <bool>false</bool>
@@ -618,6 +614,17 @@ the channel's context menu.</string>
    </property>
    <property name="whatsThis">
     <string>Shows the Mumble Developer Console, where Mumble's log output can be inspected.</string>
+   </property>
+  </action>
+  <action name="qaPositionalAudioViewer">
+   <property name="text">
+    <string>Positional &amp;Audio Viewer...</string>
+   </property>
+   <property name="toolTip">
+    <string>Show the Positional Audio Viewer</string>
+   </property>
+   <property name="whatsThis">
+    <string>Shows the Positional Audio Viewer. In it the current information used for positional audio can be inspected. Context and identity are also shown.</string>
    </property>
   </action>
   <action name="qaHelpWhatsThis">
@@ -978,6 +985,21 @@ the channel's context menu.</string>
    </property>
    <property name="whatsThis">
     <string>Silently disables Text-To-Speech for all text messages from the user.</string>
+   </property>
+  </action>
+  <action name="qaSearch">
+   <property name="icon">
+    <iconset>
+     <normaloff>skin:magnifier.svg</normaloff>skin:magnifier.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+   <property name="toolTip">
+    <string>Search for a user or channel (Ctrl+F)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>

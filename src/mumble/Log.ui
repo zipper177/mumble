@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>414</height>
+    <width>580</width>
+    <height>496</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,12 +58,17 @@
      </column>
      <column>
       <property name="text">
-       <string>Soundfile</string>
+       <string>Limit</string>
       </property>
      </column>
      <column>
       <property name="text">
        <string>Path</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Soundfile</string>
       </property>
      </column>
     </widget>
@@ -178,9 +183,9 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="qgbWhisper">
+    <widget class="QGroupBox" name="qgbMisc">
      <property name="title">
-      <string>Whisper</string>
+      <string>Misc.</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -192,6 +197,46 @@
          <string>Only accept whispers from friends</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Limit notifications when there are more than</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="qsbMessageLimitUsers">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Number of users that will trigger message limiting functionality.</string>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>users on the server.</string>
+          </property>
+          <property name="buddy">
+           <cstring>qsbMessageLimitUsers</cstring>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>

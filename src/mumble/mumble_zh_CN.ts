@@ -473,11 +473,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     <name>ALSAEnumerator</name>
     <message>
         <source>Getting name (longname) of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>获取声卡完整名称失败：%1</translation>
     </message>
     <message>
         <source>Getting name of the sound card failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>获取声卡名称失败：%1</translation>
     </message>
 </context>
 <context>
@@ -1026,15 +1026,15 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Mute cue</source>
-        <translation type="unfinished"></translation>
+        <translation>静音提示</translation>
     </message>
     <message>
         <source>Br&amp;owse...</source>
-        <translation type="unfinished"></translation>
+        <translation>浏览(&amp;O)...</translation>
     </message>
     <message>
         <source>Pre&amp;view</source>
-        <translation type="unfinished"></translation>
+        <translation>预览(&amp;V)</translation>
     </message>
 </context>
 <context>
@@ -1215,10 +1215,6 @@ This value allows you to set the maximum number of users allowed in the channel.
         <translation>&lt;b&gt;设置抖动缓冲区的最小安全边际。&lt;/b&gt;&lt;br /&gt;所有传入的音频都被缓冲，抖动缓冲区不断尝试将缓冲区推进到您的网络最低的可持续限度，以尽可能降低延迟。这将设置要使用的最小缓冲区大小。如果您听到的句子开头抖动较大，请增大这个值。</translation>
     </message>
     <message>
-        <source>Minimum distance to user before sound volume decreases</source>
-        <translation>语音音量开始减小的最小用户距离</translation>
-    </message>
-    <message>
         <source>This sets the minimum distance for sound calculations. The volume of other users&apos; speech will not decrease until they are at least this far away from you.</source>
         <translation>设置声音计算的最小距离。在其他用户与您的距离超出这个值之前，他们的语音音量不会被减小。</translation>
     </message>
@@ -1256,10 +1252,6 @@ This value allows you to set the maximum number of users allowed in the channel.
         <translation>已连接的“扬声器”实际上是耳机</translation>
     </message>
     <message>
-        <source>Factor for sound volume decrease</source>
-        <translation>音量减小因子</translation>
-    </message>
-    <message>
         <source>Bloom</source>
         <translation>增幅</translation>
     </message>
@@ -1290,10 +1282,6 @@ This value allows you to set the maximum number of users allowed in the channel.
     <message>
         <source>Maximum Distance</source>
         <translation>最大距离</translation>
-    </message>
-    <message>
-        <source>Maximum distance, beyond which speech volume won&apos;t decrease</source>
-        <translation>语音音量不再减小的最大用户距离</translation>
     </message>
     <message>
         <source>Minimum Volume</source>
@@ -1440,6 +1428,14 @@ This value allows you to set the maximum number of users allowed in the channel.
         <source>Attenuation</source>
         <translation>衰减</translation>
     </message>
+    <message>
+        <source> %</source>
+        <translation> %</translation>
+    </message>
+    <message>
+        <source> m</source>
+        <translation> 米</translation>
+    </message>
 </context>
 <context>
     <name>AudioOutputDialog</name>
@@ -1466,10 +1462,6 @@ This value allows you to set the maximum number of users allowed in the channel.
     <message>
         <source>%1 %</source>
         <translation>%1 %</translation>
-    </message>
-    <message>
-        <source>%1 m</source>
-        <translation>%1 米</translation>
     </message>
     <message>
         <source>Output system</source>
@@ -1522,6 +1514,22 @@ This value allows you to set the maximum number of users allowed in the channel.
     <message>
         <source>Loopback</source>
         <translation>回放</translation>
+    </message>
+    <message>
+        <source>Distance at which audio volume from another player starts decreasing</source>
+        <translation>其他玩家音频音量开始减小的距离</translation>
+    </message>
+    <message>
+        <source>Distance at which a player&apos;s audio volume has reached its minimum value</source>
+        <translation>其他玩家音频音量达到最小值的距离</translation>
+    </message>
+    <message>
+        <source>The minimum volume a player&apos;s audio will fade out to with increasing distance. Set to 0% for it to fade into complete silence for a realistic maximum hearing distance.</source>
+        <translation>玩家距离增大时，其音频减弱不会超过此最低音量。设置为 0% 时，超出最大可听见距离的玩家将会被完全静音。</translation>
+    </message>
+    <message>
+        <source>If an audio source is close enough, blooming will cause the audio to be played on all speakers more or less regardless of their position (albeit with lower volume)</source>
+        <translation>如果音源足够接近，音频会或多或少地在所有扬声器中播放，无论它们的位置如何（尽管音量较低）</translation>
     </message>
 </context>
 <context>
@@ -2882,7 +2890,7 @@ Are you sure you wish to replace your certificate?
     </message>
     <message>
         <source>Defaults (All)</source>
-        <translation>默认（所有）</translation>
+        <translation>默认值（所有）</translation>
     </message>
 </context>
 <context>
@@ -3261,11 +3269,11 @@ Label of the server. This is what the server will be named like in your server l
     </message>
     <message>
         <source>HTTP error %1: &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP 错误 %1：“%2”</translation>
     </message>
     <message>
         <source>Internal error encountered in CrashReporter.cpp: Received network reply does not contain an HTTP status code. Please inform a developer about error code %1</source>
-        <translation type="unfinished"></translation>
+        <translation>CrashReporter.cpp 发生了内部错误：接收的网络响应不包含 HTTP 状态码。请联系开发者提供错误代码 %1</translation>
     </message>
 </context>
 <context>
@@ -3371,14 +3379,6 @@ Label of the server. This is what the server will be named like in your server l
     <message>
         <source>Additional Shortcut Engines</source>
         <translation>其他快捷键引擎</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Enable Windows hooks&lt;/b&gt;.&lt;br /&gt;This enables the Windows hooks shortcut engine. Using this engine allows Mumble to suppress keypresses and mouse clicks.</source>
-        <translation>&lt;b&gt;启用 Windows 钩子&lt;/b&gt;。&lt;br /&gt;这将启用 Windows 钩子快捷键引擎。 启用此引擎可使 Mumble 屏蔽按键和鼠标点击。</translation>
-    </message>
-    <message>
-        <source>Enable Windows hooks</source>
-        <translation>启用 Windows 钩子</translation>
     </message>
     <message>
         <source>&lt;b&gt;Enable GKey&lt;/b&gt;.&lt;br /&gt;This setting enables support for the GKey shortcut engine, for &quot;G&quot;-keys found on Logitech keyboards.</source>
@@ -3851,7 +3851,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     </message>
     <message>
         <source>Plugin message</source>
-        <translation type="unfinished"></translation>
+        <translation>插件消息</translation>
     </message>
 </context>
 <context>
@@ -3968,10 +3968,6 @@ This field describes the size of an LCD device. The size is given either in pixe
         <translation> 字符</translation>
     </message>
     <message>
-        <source>Whisper</source>
-        <translation>密语</translation>
-    </message>
-    <message>
         <source>If checked you will only hear whispers from users you added to your friend list.</source>
         <translation>如果选中此选项，您将只能听到好友列表内用户的密语。</translation>
     </message>
@@ -4054,6 +4050,42 @@ The setting only applies for new messages, the already shown ones will retain th
     <message>
         <source>Chat message margins</source>
         <translation>聊天消息间距</translation>
+    </message>
+    <message>
+        <source>Limit</source>
+        <translation>限制</translation>
+    </message>
+    <message>
+        <source>Misc.</source>
+        <translation>杂项</translation>
+    </message>
+    <message>
+        <source>Number of users that will trigger message limiting functionality.</source>
+        <translation>触发消息限制功能所需用户数。</translation>
+    </message>
+    <message>
+        <source>users on the server.</source>
+        <translation>时，限制通知数量。</translation>
+    </message>
+    <message>
+        <source>Limit notifications when there are more than</source>
+        <translation>当服务器上的用户数超过</translation>
+    </message>
+    <message>
+        <source>User limit for message limiting</source>
+        <translation>消息限制用户数</translation>
+    </message>
+    <message>
+        <source>Click here to toggle message limiting for all events - If using this option be sure to change the user limit below.</source>
+        <translation>点击此处开关所有事件的消息限制——使用此选项时，请确保修改下方的用户限制。</translation>
+    </message>
+    <message>
+        <source>Toggle message limiting behavior for %1 events </source>
+        <translation>开关 %1 事件的消息限制 </translation>
+    </message>
+    <message>
+        <source>Click here to toggle limiting for %1 events. &lt;br /&gt; If checked, notifications for this event typewill not be played when the user count on the server exceeds the set threshold.</source>
+        <translation>点击此处开关 %1 事件的消息限制。&lt;br /&gt;勾选后，如果服务器上的用户超过设置的阈值，此类型事件的通知将不会被触发。</translation>
     </message>
 </context>
 <context>
@@ -4468,6 +4500,30 @@ The setting only applies for new messages, the already shown ones will retain th
         <source>Show nicknames only</source>
         <translation>仅显示昵称</translation>
     </message>
+    <message>
+        <source>Channel Hierarchy String</source>
+        <translation>频道层级字符串</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>The action to perform when a user is activated (via double-click or enter) in the search dialog.</source>
+        <translation>在搜索对话框中，用户被激活时（双击或 Enter 键）执行的操作。</translation>
+    </message>
+    <message>
+        <source>Action (User):</source>
+        <translation>操作（用户）：</translation>
+    </message>
+    <message>
+        <source>The action to perform when a channel is activated (via double-click or enter) in the search dialog.</source>
+        <translation>在搜索对话框中，频道被激活时（双击或 Enter 键）执行的操作。</translation>
+    </message>
+    <message>
+        <source>Action (Channel):</source>
+        <translation>操作（频道）：</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -4802,10 +4858,6 @@ The setting only applies for new messages, the already shown ones will retain th
     <message>
         <source>Push-to-Talk</source>
         <translation>按键发言</translation>
-    </message>
-    <message>
-        <source>Mumble - Minimal View -- %1</source>
-        <translation>Mumble - 简洁视图 -- %1</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -5866,10 +5918,6 @@ Otherwise abort and check your certificate and username.</source>
         <translation>切换筛选(&amp;F)</translation>
     </message>
     <message>
-        <source>Toggle the channel filter (Ctrl+F)</source>
-        <translation>开关频道筛选器 (Ctrl+F)</translation>
-    </message>
-    <message>
         <source>Enable or disable the filtering of select channels.
 By default all empty channels will be filtered.
 You can mark additional channels for filtering from
@@ -6246,6 +6294,10 @@ Valid options are:
                 Specify an alternative configuration file.
                 If you use this to run multiple instances of Mumble at once,
                 make sure to set an alternative &apos;database&apos; value in the config.
+  --default-certificate-dir &lt;dir&gt;
+                Specify an alternative default certificate path.
+                This path is only used if there is no certificate loaded
+                from the settings.
   -n, --noidentity
                 Suppress loading of identity files (i.e., certificates.)
   -jn, --jackname &lt;arg&gt;
@@ -6284,6 +6336,122 @@ Valid options are:
                 Otherwise the locale will be permanently saved to
                 Mumble&apos;s settings.
 </source>
+        <translation>用法：mumble [选项] [&lt;URL&gt; | &lt;插件列表&gt;]
+
+&lt;URL&gt; 指定启动时连接的 URL，而不是显示连接窗口，URL 的格式为：
+mumble://[&lt;用户名&gt;[:&lt;密码&gt;]@]&lt;主机名&gt;[:&lt;端口&gt;][/&lt;频道名&gt;[/&lt;子频道名&gt;...]][?version=&lt;x.y.z&gt;]
+
+&lt;插件列表&gt; 是需要安装的插件列表
+必须设置 version 请求参数以调用正确的客户端版本，当前的默认值为 1.2.0。
+
+可用的选项：
+  -h, --help    显示此帮助信息并退出。
+  -m, --multiple
+                允许启动多个客户端实例。
+  -c, --config
+                指定替代配置文件。
+                如果您使用此参数同时运行多个 Mumble 实例，
+                请确保在配置文件内设置替代“database”选项。
+  --default-certificate-dir &lt;目录&gt;
+                指定替代的默认证书目录。
+                此路径仅在无法从设置中加载证书时生效。
+  -n, --noidentity
+                禁止加载身份认证文件（即证书）。
+  -jn, --jackname &lt;参数&gt;
+                设置自定义 Jack 客户端名称。
+  --license
+                显示 Mumble 许可。
+  --authors
+                显示 Mumble 作者。
+  --third-party-licenses
+                显示 Mumble 使用的第三方软件的许可。
+  --window-title-ext &lt;参数&gt;
+                设置自定义窗口标题后缀名。
+  --dump-input-streams
+                转储输入链上各部分的 PCM 流。
+                （适用于调试目的）
+                - 原始麦克风输入
+                - 扬声器回声消除重读取
+                - 已处理麦克风输入
+  --print-echocancel-queue
+                向标准输出打印回声消除队列状态。
+                （适用于调试目的）
+  --translation-dir &lt;目录&gt;
+                指定一个额外的目录，Mumble 会在其中搜索翻译文件
+                来覆盖内置的翻译。通过此方式添加的目录比其它情况
+                下的默认位置具有更高的优先级。
+  --print-translation-dirs
+                输出 Mumble 会在哪些目录搜索翻译文件以覆盖内置翻译。
+                （适用于译者测试自己的翻译）
+  --locale &lt;区域语言代码&gt;
+                用指定字符串对应的语言覆盖 Mumble 的语言设置。
+                如果字符串格式无效，Mumble 会出错。
+                否则，指定的语言会永久保存到 Mumble 设置中。
+</translation>
+    </message>
+    <message>
+        <source>Directory %1 does not exist.
+</source>
+        <translation>文件夹 %1 不存在。
+</translation>
+    </message>
+    <message>
+        <source>Toggle TalkingUI</source>
+        <comment>Global shortcut</comment>
+        <translation>开关对话界面</translation>
+    </message>
+    <message>
+        <source>Toggles the visibility of the TalkingUI.</source>
+        <comment>Global Shortcut</comment>
+        <translation>切换对话界面的可见性。</translation>
+    </message>
+    <message>
+        <source>Toggle the channel filter (Alt+F)</source>
+        <translation>开关频道过滤器 (Alt+F)</translation>
+    </message>
+    <message>
+        <source>Alt+F</source>
+        <translation>Alt+F</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Search for a user or channel (Ctrl+F)</source>
+        <translation>搜索用户或频道 (Ctrl+F)</translation>
+    </message>
+    <message>
+        <source>Toggle search dialog</source>
+        <comment>Global Shortcut</comment>
+        <translation>开关搜索对话框</translation>
+    </message>
+    <message>
+        <source>This will open or close the search dialog depending on whether it is currently opened already</source>
+        <translation>根据当前的开启状态打开或关闭搜索对话框</translation>
+    </message>
+    <message>
+        <source>Unmute yourself</source>
+        <translation>打开自己的麦克风</translation>
+    </message>
+    <message>
+        <source>Undeafen yourself</source>
+        <translation>打开自己的扬声器</translation>
+    </message>
+    <message>
+        <source>Positional &amp;Audio Viewer...</source>
+        <translation>位置音频查看器(&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Show the Positional Audio Viewer</source>
+        <translation>显示位置音频查看器</translation>
+    </message>
+    <message>
+        <source>Shows the Positional Audio Viewer. In it the current information used for positional audio can be inspected. Context and identity are also shown.</source>
+        <translation>显示位置音频查看器。可以在其中检查位置音频的当前信息，包括上下文和标识符。</translation>
+    </message>
+    <message>
+        <source>Mumble - Minimal View</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6581,11 +6749,11 @@ Prevents the client from sending potentially identifying information about the o
     </message>
     <message>
         <source>Check for plugin updates on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>启动时检查插件更新</translation>
     </message>
     <message>
         <source>Automatically download and install plugin updates</source>
-        <translation type="unfinished"></translation>
+        <translation>自动下载并安装插件更新</translation>
     </message>
 </context>
 <context>
@@ -6805,7 +6973,7 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <source>Load…</source>
-        <translation>加载...</translation>
+        <translation>加载…</translation>
     </message>
     <message>
         <source>Save your overlay settings to file</source>
@@ -6813,7 +6981,7 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <source>Save…</source>
-        <translation>保存...</translation>
+        <translation>保存…</translation>
     </message>
     <message>
         <source>Set the overlay font.</source>
@@ -7142,121 +7310,137 @@ To upgrade these files to their latest versions, click the button below.</source
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished">启用</translation>
+        <translation>启用</translation>
     </message>
     <message>
         <source>PA</source>
-        <translation type="unfinished"></translation>
+        <translation>PA</translation>
     </message>
     <message>
         <source>KeyEvents</source>
-        <translation type="unfinished"></translation>
+        <translation>键盘事件</translation>
     </message>
     <message>
         <source>Install a plugin from a local file</source>
-        <translation type="unfinished"></translation>
+        <translation>从本地文件安装插件</translation>
     </message>
     <message>
         <source>Install plugin...</source>
-        <translation type="unfinished"></translation>
+        <translation>安装插件...</translation>
     </message>
     <message>
         <source>Unload the currently selected plugin. This will remove it from the plugin list for the current session.</source>
-        <translation type="unfinished"></translation>
+        <translation>取消加载已选插件。插件将会从插件列表中删除，直到本次会话结束。</translation>
     </message>
     <message>
         <source>Unload</source>
-        <translation type="unfinished"></translation>
+        <translation>取消加载</translation>
     </message>
     <message>
         <source>The plugin was installed successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>成功安装此插件</translation>
     </message>
     <message>
         <source>Unable to deactivate all requested features for plugin &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>无法关闭所有插件“%1”要求的功能</translation>
     </message>
     <message>
         <source>Unable to load plugin &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>无法加载插件“%1”</translation>
     </message>
     <message>
         <source>Whether the positional audio feature of this plugin should be enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>是否应该启用此插件的位置音频功能</translation>
     </message>
     <message>
         <source>This plugin does not provide support for positional audio</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件未提供位置音频支持</translation>
     </message>
     <message>
         <source>Whether this plugin has the permission to be listening to all keyboard events that occur while Mumble has focus</source>
-        <translation type="unfinished"></translation>
+        <translation>此插件是否有权限在 Mumble 获得焦点时监听所有键盘事件</translation>
     </message>
     <message>
         <source>Whether this plugin should be enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>是否应该启用此插件</translation>
     </message>
 </context>
 <context>
     <name>PluginInstaller</name>
     <message>
         <source>PluginInstaller</source>
-        <translation type="unfinished"></translation>
+        <translation>插件安装器</translation>
     </message>
     <message>
         <source>You are about to install the plugin listed below. Do you wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>您即将安装下列插件。确定要继续吗？</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Name:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;名称：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Version:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;版本：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Author(s):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;作者：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Description:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;描述：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;No</source>
-        <translation type="unfinished"></translation>
+        <translation>否(&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>是(&amp;Y)</translation>
     </message>
     <message>
         <source>The file &quot;%1&quot; is not a valid plugin file!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Found more than one plugin library for the current OS in &quot;%1&quot; (&quot;%2&quot; and &quot;%3&quot;)!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to find a plugin for the current OS in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>文件“%1”不是有效的插件文件！</translation>
     </message>
     <message>
         <source>Unable to load plugin &quot;%1&quot; - check the plugin interface!</source>
-        <translation type="unfinished"></translation>
+        <translation>无法加载插件“%1”，请检查插件接口！</translation>
     </message>
     <message>
         <source>Unable to delete old plugin at &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>无法删除旧插件“%1”</translation>
     </message>
     <message>
         <source>Unable to copy plugin library from &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>无法从“%1”复制插件库到“%2”</translation>
     </message>
     <message>
         <source>Unable to move plugin library to &quot;%1&quot;</source>
+        <translation>无法移动插件库到“%1”</translation>
+    </message>
+    <message>
+        <source>Unable to locate the plugin manifest (manifest.xml)</source>
+        <translation>无法定位插件清单文件（manifest.xml）</translation>
+    </message>
+    <message>
+        <source>Error while processing manifest: %1</source>
+        <translation>处理清单文件错误：%1</translation>
+    </message>
+    <message>
+        <source>Unable to find plugin for the current OS (&quot;%1&quot;) and architecture (&quot;%2&quot;)</source>
+        <translation>无法找到匹配当前操作系统（“%1”）和架构（“%2”）的插件</translation>
+    </message>
+    <message>
+        <source>Unable to locate plugin library specified in manifest (&quot;%1&quot;) in the bundle</source>
+        <translation>无法在插件包中定位到清单文件所指定的插件库（“%1”）</translation>
+    </message>
+    <message>
+        <source>Overwrite plugin?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new plugin &quot;%1&quot; (%2) is about to overwrite the already installed plugin &quot;%3&quot; (%4). Do you wish to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7264,66 +7448,66 @@ To upgrade these files to their latest versions, click the button below.</source
     <name>PluginManager</name>
     <message>
         <source>%1 lost link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 失去链接</translation>
     </message>
     <message>
         <source>%1 linked</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 已链接</translation>
     </message>
     <message>
         <source>Plugin &quot;%1&quot; encountered a permanent error in positional data gathering</source>
-        <translation type="unfinished"></translation>
+        <translation>插件“%1”在收集位置数据时遇到永久性错误</translation>
     </message>
     <message>
         <source>Non-plugin found in plugin directory: &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>在插件目录中发现非插件：“%1”</translation>
     </message>
     <message>
         <source>Failed at loading manual plugin: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>手动加载插件失败：%1</translation>
     </message>
 </context>
 <context>
     <name>PluginUpdater</name>
     <message>
         <source>PluginUpdater</source>
-        <translation type="unfinished"></translation>
+        <translation>插件更新器</translation>
     </message>
     <message>
         <source>The following plugins can be updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>以下插件可以更新。</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>全选</translation>
     </message>
     <message>
         <source>Plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>插件</translation>
     </message>
     <message>
         <source>Download-URL</source>
-        <translation type="unfinished"></translation>
+        <translation>下载链接</translation>
     </message>
     <message>
         <source>Do you want to update the selected plugins?</source>
-        <translation type="unfinished"></translation>
+        <translation>您要更新已选插件吗？</translation>
     </message>
     <message>
         <source>Unable to download plugin update for &quot;%1&quot; from &quot;%2&quot; (%3)</source>
-        <translation type="unfinished"></translation>
+        <translation>无法从“%2”下载插件“%1”的更新（%3）</translation>
     </message>
     <message>
         <source>Update for plugin &quot;%1&quot; failed due to too many redirects</source>
-        <translation type="unfinished"></translation>
+        <translation>由于重定向过多，更新插件“%1”失败</translation>
     </message>
     <message>
         <source>Unable to download plugin update for &quot;%1&quot; from &quot;%2&quot; (HTTP status code %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>无法从“%2”下载插件“%1”的更新（HTTP 状态码 %3）</translation>
     </message>
     <message>
         <source>Successfully updated plugin &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>成功更新插件“%1”</translation>
     </message>
 </context>
 <context>
@@ -7331,6 +7515,61 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <source>Default device</source>
         <translation>默认设备</translation>
+    </message>
+</context>
+<context>
+    <name>PositionalAudioViewer</name>
+    <message>
+        <source>Positional Audio Viewer</source>
+        <translation>位置音频查看器</translation>
+    </message>
+    <message>
+        <source>Camera direction</source>
+        <translation>摄像机方向</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation>X</translation>
+    </message>
+    <message>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <source>Z</source>
+        <translation>Z</translation>
+    </message>
+    <message>
+        <source>Player position</source>
+        <translation>玩家位置</translation>
+    </message>
+    <message>
+        <source>Player axis</source>
+        <translation>玩家轴线</translation>
+    </message>
+    <message>
+        <source>Player direction</source>
+        <translation>玩家方向</translation>
+    </message>
+    <message>
+        <source>Camera axis</source>
+        <translation>摄像机轴线</translation>
+    </message>
+    <message>
+        <source>Camera position</source>
+        <translation>摄像机位置</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>信息</translation>
+    </message>
+    <message>
+        <source>Context</source>
+        <translation>上下文</translation>
+    </message>
+    <message>
+        <source>Identity</source>
+        <translation>标识符</translation>
     </message>
 </context>
 <context>
@@ -7515,11 +7754,11 @@ See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;th
     </message>
     <message>
         <source>EXPERIMENTAL: Acoustic echo cancellation (Apple).</source>
-        <translation type="unfinished"></translation>
+        <translation>实验性：声学回声消除（Apple）。</translation>
     </message>
     <message>
         <source>The support for this option is experimental only! This option works best when using built-in microphone and speaker.</source>
-        <translation type="unfinished"></translation>
+        <translation>此选项的支持是实验性的！使用内置麦克风和扬声器时，此选项效果最佳。</translation>
     </message>
 </context>
 <context>
@@ -7602,6 +7841,72 @@ See &lt;a href=&quot;https://wiki.mumble.info/wiki/Installing_Mumble&quot;&gt;th
     <message>
         <source>Text</source>
         <translation>文字</translation>
+    </message>
+</context>
+<context>
+    <name>Search::SearchDialog</name>
+    <message>
+        <source>None</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>加入</translation>
+    </message>
+</context>
+<context>
+    <name>SearchDialog</name>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Enter search String...</source>
+        <translation>输入搜索关键词……</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>选项</translation>
+    </message>
+    <message>
+        <source>Whether to search for users</source>
+        <translation>是否搜索用户</translation>
+    </message>
+    <message>
+        <source>&amp;Users</source>
+        <translation>用户(&amp;U)</translation>
+    </message>
+    <message>
+        <source>Whether the search should be performed case-sensitively</source>
+        <translation>搜索是否区分大小写</translation>
+    </message>
+    <message>
+        <source>Case-&amp;sensitive</source>
+        <translation>区分大小写(&amp;S)</translation>
+    </message>
+    <message>
+        <source>Options:</source>
+        <translation>选项：</translation>
+    </message>
+    <message>
+        <source>Whether the search string should be interpreted as a regular expression</source>
+        <translation>搜索关键词是否应该作为正则表达式解析</translation>
+    </message>
+    <message>
+        <source>&amp;RegEx</source>
+        <translation>正则表达式(&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Channels</source>
+        <translation>频道(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Search for:</source>
+        <translation>搜索范围：</translation>
+    </message>
+    <message>
+        <source>Whether to search for channels</source>
+        <translation>是否搜索频道</translation>
     </message>
 </context>
 <context>

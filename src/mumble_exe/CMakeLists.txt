@@ -54,10 +54,23 @@ if(packaging)
 		list(APPEND installer_vars "--all-languages")
 	endif()
 
+
 	list(APPEND installer_vars
 		"--version" ${PROJECT_VERSION}
-		"--arch" ${ARCH}
+		"--arch" "${MUMBLE_TARGET_ARCH}"
 	)
+
+	if(overlay)
+		list(APPEND installer_vars
+			"--overlay"
+		)
+	endif()
+
+	if(g15)
+		list(APPEND installer_vars
+			"--g15"
+		)
+	endif()
 
 	file(COPY 
 		${CMAKE_SOURCE_DIR}/installer/MumbleInstall.cs

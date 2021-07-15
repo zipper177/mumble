@@ -28,7 +28,7 @@
 #endif
 #include "ApplicationPalette.h"
 #include "Channel.h"
-#include "ChannelListener.h"
+#include "ChannelListenerManager.h"
 #include "ClientUser.h"
 #include "CrashReporter.h"
 #include "EnvUtils.h"
@@ -37,6 +37,7 @@
 #include "NetworkConfig.h"
 #include "PluginInstaller.h"
 #include "PluginManager.h"
+#include "QtWidgetUtils.h"
 #include "SSL.h"
 #include "SocketRPC.h"
 #include "TalkingUI.h"
@@ -72,29 +73,10 @@ void throw_exception(std::exception const &) {
 extern void os_init();
 extern char *os_lang;
 
-QScreen *screenAt(QPoint point) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-	// screenAt was only introduced in Qt 5.10
-	return QGuiApplication::screenAt(point);
-#else
-	for (QScreen *currentScreen : QGuiApplication::screens()) {
-		if (currentScreen->availableGeometry().contains(point)) {
-			return currentScreen;
-		}
-	}
-
-	return nullptr;
-#endif
-}
-
-bool positionIsOnScreen(QPoint point) {
-	return screenAt(point) != nullptr;
-}
-
 QPoint getTalkingUIPosition() {
 	QPoint talkingUIPos = QPoint(0, 0);
 	if (Global::get().s.qpTalkingUI_Position != Settings::UNSPECIFIED_POSITION
-		&& positionIsOnScreen(Global::get().s.qpTalkingUI_Position)) {
+		&& Mumble::QtUtils::positionIsOnScreen(Global::get().s.qpTalkingUI_Position)) {
 		// Restore last position
 		talkingUIPos = Global::get().s.qpTalkingUI_Position;
 	} else {
@@ -104,7 +86,7 @@ QPoint getTalkingUIPosition() {
 		const QPoint defaultPos =
 			QPoint(mainWindowPos.x() + Global::get().mw->size().width() + horizontalBuffer, mainWindowPos.y());
 
-		if (positionIsOnScreen(defaultPos)) {
+		if (Mumble::QtUtils::positionIsOnScreen(defaultPos)) {
 			talkingUIPos = defaultPos;
 		}
 	}
@@ -115,18 +97,18 @@ QPoint getTalkingUIPosition() {
 	const QSize talkingUISize = Global::get().talkingUI->size();
 
 	// The screen should always be found at this point as we have chosen to pos to be on a screen
-	const QScreen *screen  = screenAt(talkingUIPos);
+	const QScreen *screen  = Mumble::QtUtils::screenAt(talkingUIPos);
 	const QRect screenGeom = screen ? screen->availableGeometry() : QRect(0, 0, 0, 0);
 
 	// Check whether the TalkingUI fits on the screen in x-direction
-	if (!positionIsOnScreen(talkingUIPos + QPoint(talkingUISize.width(), 0))) {
+	if (!Mumble::QtUtils::positionIsOnScreen(talkingUIPos + QPoint(talkingUISize.width(), 0))) {
 		int overlap = talkingUIPos.x() + talkingUISize.width() - screenGeom.x() - screenGeom.width();
 
 		// Correct the x coordinate but don't move it below 0
 		talkingUIPos.setX(std::max(talkingUIPos.x() - overlap, 0));
 	}
 	// Check whether the TalkingUI fits on the screen in y-direction
-	if (!positionIsOnScreen(talkingUIPos + QPoint(0, talkingUISize.height()))) {
+	if (!Mumble::QtUtils::positionIsOnScreen(talkingUIPos + QPoint(0, talkingUISize.height()))) {
 		int overlap = talkingUIPos.y() + talkingUISize.height() - screenGeom.y() - screenGeom.height();
 
 		// Correct the x coordinate but don't move it below 0
@@ -229,6 +211,7 @@ int main(int argc, char **argv) {
 	bool printTranslationDirs = false;
 	QString rpcCommand;
 	QUrl url;
+	QDir qdCert(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 	QStringList extraTranslationDirs;
 	QString localeOverwrite;
 
@@ -261,6 +244,10 @@ int main(int argc, char **argv) {
 								   "                Specify an alternative configuration file.\n"
 								   "                If you use this to run multiple instances of Mumble at once,\n"
 								   "                make sure to set an alternative 'database' value in the config.\n"
+								   "  --default-certificate-dir <dir>\n"
+								   "                Specify an alternative default certificate path.\n"
+								   "                This path is only used if there is no certificate loaded\n"
+								   "                from the settings.\n"
 								   "  -n, --noidentity\n"
 								   "                Suppress loading of identity files (i.e., certificates.)\n"
 								   "  -jn, --jackname <arg>\n"
@@ -386,6 +373,25 @@ int main(int argc, char **argv) {
 				Global::get().bDebugDumpInput = true;
 			} else if (args.at(i) == QLatin1String("--print-echocancel-queue")) {
 				Global::get().bDebugPrintQueue = true;
+			} else if (args.at(i) == QLatin1String("-c") || args.at(i) == QLatin1String("--config")) {
+				//	We already parsed these arguments above, so just skip over them here
+				++i;
+			} else if (args.at(i) == QLatin1String("--default-certificate-dir")) {
+				if (i + 1 < args.count()) {
+					qdCert = QDir(args.at(i + 1));
+					// I suppose we should really be checking whether the directory is writable here too,
+					// but there are some subtleties with doing that:
+					// (doc.qt.io/qt-5/qfile.html#platform-specific-issues)
+					// so we can just let things fail down below when this directory is used.
+					if (!qdCert.exists()) {
+						printf("%s", qPrintable(MainWindow::tr("Directory %1 does not exist.\n").arg(args.at(i + 1))));
+						return 1;
+					}
+					++i;
+				} else {
+					qCritical("Missing argument for --default-certificate-dir!");
+					return 1;
+				}
 			} else if (args.at(i) == "--print-translation-dirs") {
 				printTranslationDirs = true;
 			} else if (args.at(i) == "--translation-dir") {
@@ -665,8 +671,8 @@ int main(int argc, char **argv) {
 					 &TalkingUI::on_channelListenerAdded);
 	QObject::connect(Global::get().mw, &MainWindow::userRemovedChannelListener, Global::get().talkingUI,
 					 &TalkingUI::on_channelListenerRemoved);
-	QObject::connect(&ChannelListener::get(), &ChannelListener::localVolumeAdjustmentsChanged, Global::get().talkingUI,
-					 &TalkingUI::on_channelListenerLocalVolumeAdjustmentChanged);
+	QObject::connect(Global::get().channelListenerManager.get(), &ChannelListenerManager::localVolumeAdjustmentsChanged,
+					 Global::get().talkingUI, &TalkingUI::on_channelListenerLocalVolumeAdjustmentChanged);
 
 	QObject::connect(Global::get().mw, &MainWindow::serverSynchronized, Global::get().talkingUI,
 					 &TalkingUI::on_serverSynchronized);
@@ -680,8 +686,8 @@ int main(int argc, char **argv) {
 
 #ifdef Q_OS_WIN
 	// Set mumble_mw_hwnd in os_win.cpp.
-	// Used by APIs in ASIOInput and GlobalShortcut_win that require a HWND.
-	mumble_mw_hwnd = GetForegroundWindow();
+	// Used in ASIOInput and GlobalShortcut_win by APIs that require a HWND.
+	mumble_mw_hwnd = reinterpret_cast< HWND >(Global::get().mw->winId());
 #endif
 
 #ifdef USE_DBUS
@@ -724,8 +730,7 @@ int main(int argc, char **argv) {
 	Global::get().s.uiUpdateCounter = 2;
 
 	if (!CertWizard::validateCert(Global::get().s.kpCertificate)) {
-		QDir qd(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
-		QFile qf(qd.absoluteFilePath(QLatin1String("MumbleAutomaticCertificateBackup.p12")));
+		QFile qf(qdCert.absoluteFilePath(QLatin1String("MumbleAutomaticCertificateBackup.p12")));
 		if (qf.open(QIODevice::ReadOnly | QIODevice::Unbuffered)) {
 			Settings::KeyPair kp = CertWizard::importCert(qf.readAll());
 			qf.close();
