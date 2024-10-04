@@ -2821,7 +2821,7 @@ Sertifikanızı değiştirmek istediğinize emin misiniz?
     </message>
     <message>
         <source>&lt;p&gt;Mumble can use certificates to authenticate with servers. Using certificates avoids passwords, meaning you don&apos;t need to disclose any password to the remote site. It also enables very easy user registration and a client side friends list independent of servers.&lt;/p&gt;&lt;p&gt;While Mumble can work without certificates, the majority of servers will expect you to have one.&lt;/p&gt;&lt;p&gt;Creating a new certificate automatically is sufficient for most use cases. But Mumble also supports certificates representing trust in the users ownership of an email address. These certificates are issued by third parties. For more information see our &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;user certificate documentation&lt;/a&gt;. &lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Mumble, sunucularla kimlik doğrulaması yapmak için sertifikaları kullanabilir. Sertifikaları kullanmak parolaları ortadan kaldırır, yani uzak siteye herhangi bir parola vermeniz gerekmez. Ayrıca çok kolay kullanıcı kaydı ve sunuculardan bağımsız bir istemci tarafı arkadaş listesi sağlar.&lt;/p&gt;&lt;p&gt;Mumble sertifikasız çalışabilse de, sunucuların çoğu bir sertifikaya sahip olmanızı bekleyecektir.&lt;/p&gt;&lt;p&gt;Otomatik olarak yeni bir sertifika oluşturmak çoğu kullanım durumu için yeterlidir. Ancak Mumble, kullanıcıların bir e-posta adresine sahip olduğuna dair güveni temsil eden sertifikaları da destekler. Bu sertifikalar üçüncü taraflarca verilir. Daha fazla bilgi için &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;kullanıcı sertifikası belgelerimize&lt;/a&gt; bakın.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5217,10 +5217,6 @@ Bu ayar sadece yeni mesajlara uygulanır, zaten görüntülenmiş olanlar öncek
         <translation>&lt;p&gt;%1&lt;/p&gt;&lt;ul&gt;%2&lt;/ul&gt;&lt;p&gt;Bu sertifikayla ilgili hatalar şunlardır:&lt;/p&gt;&lt;ol&gt;%3&lt;/ol&gt;&lt;p&gt;Buna rağmen bu sertifikayı kabul etmek istiyor musunuz?&lt;br /&gt;(Sertifika saklanacaktır ve bu soru tekrar sorulmayacaktır.)&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>SSL Version mismatch</source>
-        <translation>SSL Sürüm uyumsuzluğu</translation>
-    </message>
-    <message>
         <source>Server connection failed.</source>
         <translation>Sunucuyla bağlantı başarısız oldu.</translation>
     </message>
@@ -5440,10 +5436,6 @@ Bu ayar sadece yeni mesajlara uygulanır, zaten görüntülenmiş olanlar öncek
     <message>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
         <translation>&lt;b&gt;UYARI:&lt;/b&gt; Sunucu sakladığımız sertifikadan değişik bir sertifika sundu.</translation>
-    </message>
-    <message>
-        <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation>Bu sunucu Mumble&apos;ın modern sürümleri tarafından artık desteklenmeyen eski bir şifreleme standardı kullanmaktadır.</translation>
     </message>
     <message>
         <source>Server connection failed: %1.</source>
@@ -7153,6 +7145,27 @@ Geçerli seçenekler şunlardır:
         <source>Filtered channels and users</source>
         <translation>Filtrelenmiş kanallar ve kullanıcılar</translation>
     </message>
+    <message>
+        <source>Toggle positional audio</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will toggle positional audio on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSL error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble is unable to establish a secure connection to the server. (&quot;%1&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This could be caused by one of the following scenarios:&lt;ul&gt;&lt;li&gt;Your client and the server use different encryption standards. This could be because you are using a very old client or the server you are connecting to is very old. In the first case, you should update your client and in the second case you should contact the server administrator so that they can update their server.&lt;/li&gt;&lt;li&gt;Either your client or the server is using an old operating system that doesn&apos;t provide up-to-date encryption methods. In this case you should consider updating your OS or contacting the server admin so that they can update theirs.&lt;/li&gt;&lt;li&gt;The server you are connecting to isn&apos;t actually a Mumble server. Please ensure that the used server address really belongs to a Mumble server and not e.g. to a game server.&lt;/li&gt;&lt;li&gt;The port you are connecting to does not belong to a Mumble server but instead is bound to a completely unrelated process on the server-side. Please double-check you have used the correct port.&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Manual</name>
@@ -8694,7 +8707,8 @@ Bunları tekrar kaydedebilirsiniz.</translation>
     <message>
         <source>&lt;p&gt;If you&apos;re using Linux this is most likely because you are using a version from your distribution&apos;s package repository that have their own update cycles.&lt;/p&gt;&lt;p&gt;If you want to always have the most recent Mumble version, you should consider using a different method of installation.
 See &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt;the project repository&lt;/a&gt; for what alternatives there are.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Linux kullanıyorsanız, bunun nedeni büyük olasılıkla dağıtımınızın kendi güncelleme döngülerine sahip paket deposundaki bir sürümü kullanıyor olmanızdır.&lt;/p&gt;&lt;p&gt;Her zaman en güncel Mumble sürümüne sahip olmak istiyorsanız, farklı bir kurulum yöntemi kullanmayı düşünmelisiniz.
+Hangi alternatiflerin olduğunu görmek için &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt;proje deposuna&lt;/a&gt; bakın.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

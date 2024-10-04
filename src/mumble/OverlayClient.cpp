@@ -1,4 +1,4 @@
-// Copyright 2010-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -138,19 +138,10 @@ void OverlayClient::updateMouse() {
 		extern QPixmap qt_pixmapFromWinHBITMAP(HBITMAP bitmap, int format = 0);
 
 		if (info.hbmColor) {
-#		if QT_VERSION >= 0x060000
 			pm = QBitmap::fromPixmap(qt_pixmapFromWinHBITMAP(info.hbmColor));
 			pm.setMask(QBitmap::fromPixmap(qt_pixmapFromWinHBITMAP(info.hbmMask)));
-#		else
-			pm = qt_pixmapFromWinHBITMAP(info.hbmColor);
-			pm.setMask(QBitmap(qt_pixmapFromWinHBITMAP(info.hbmMask)));
-#		endif
 		} else {
-#		if QT_VERSION >= 0x060000
-			const auto orig = QBitmap::fromPixmap(qt_pixmapFromWinHBITMAP(info.hbmMask));
-#		else
-			const QBitmap orig(qt_pixmapFromWinHBITMAP(info.hbmMask));
-#		endif
+			const auto orig  = QBitmap::fromPixmap(qt_pixmapFromWinHBITMAP(info.hbmMask));
 			const QImage img = orig.toImage();
 
 			const int h         = img.height() / 2;

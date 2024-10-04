@@ -464,7 +464,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Selects a group this ACL entry applies to. Selecting a group and selecting a user are mutually exclusive.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберите группу, к которой применяется эта запись ACL. Выбор группы и выбор пользователя являются взаимоисключающими.</translation>
     </message>
     <message>
         <source>Select user</source>
@@ -472,7 +472,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Selects a user this ACL entry applies to. Selecting a group and selecting a user are mutually exclusive.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберите пользователя, к которому применяется эта запись ACL. Выбор группы и выбор пользователя являются взаимоисключающими.</translation>
     </message>
     <message>
         <source>List of available permissions</source>
@@ -633,11 +633,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Move from unused to microphone list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перенести из неиспользуемых в список микрофонов</translation>
     </message>
     <message>
         <source>Move from microphone to unused list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Переместить из микрофонов в список неиспользуемых</translation>
     </message>
     <message>
         <source>List of unused devices</source>
@@ -645,11 +645,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Move from unused to speakers list</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить из неиспользуемых в список динамиков</translation>
     </message>
     <message>
         <source>Move from speakers to unused list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Переместить из динамиков в список неиспользуемых</translation>
     </message>
 </context>
 <context>
@@ -1086,11 +1086,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Push To Talk</source>
-        <translation>Нажмите что бы говорить</translation>
+        <translation>Активация по кнопке</translation>
     </message>
     <message>
         <source>Audible audio cue when starting or stopping to transmit using Voice Activity</source>
-        <translation>Звуковой сигнал при запуске или остановке передачи с помощью голосовой активности.</translation>
+        <translation>Звуковой сигнал при запуске или остановке передачи при помощи активации по голосу</translation>
     </message>
     <message>
         <source>&lt;b&gt;This enables transmission audio cues when using Voice Activity.&lt;/b&gt;&lt;br /&gt;Setting this will give you a short audio beep when you start and stop transmitting.</source>
@@ -1102,7 +1102,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Input backend for audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Входной интерфейс для аудио</translation>
     </message>
     <message>
         <source>Audio input system</source>
@@ -1162,7 +1162,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Audio compression quality</source>
-        <translation type="unfinished"></translation>
+        <translation>Качество сжатия звука</translation>
     </message>
     <message>
         <source>This sets the target compression bitrate</source>
@@ -1178,7 +1178,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Noise suppression strength</source>
-        <translation type="unfinished"></translation>
+        <translation>Сила шумоподавления</translation>
     </message>
     <message>
         <source>Echo cancellation mode</source>
@@ -1186,7 +1186,7 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Path to audio file</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь к аудиофайлу</translation>
     </message>
     <message>
         <source>Path to audio cue file when stopping to speak. Use the &quot;browse&quot; button to open a file dialog.</source>
@@ -1202,19 +1202,19 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>Gets played when you are trying to speak while being muted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проигрывается, когда вы пытаетесь говорить, пока микрофон выключен</translation>
     </message>
     <message>
         <source>Path to mute cue file. Use the &quot;browse&quot; button to open a file dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Путь к файлу сигнала отключения звука. Используйте &quot;Обзор&quot;, чтобы открыть диалоговое окно выбора файла.</translation>
     </message>
     <message>
         <source>Browse for mute cue audio file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберете аудиофайл сигнала отключения звука</translation>
     </message>
     <message>
         <source>Path to audio cue file when starting to speak. Use the &quot;browse&quot; button to open a file dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Путь к файлу сигнала о начале речи. Используйте &quot;Обзор&quot;, чтобы открыть диалоговое окно выбора файла.</translation>
     </message>
     <message>
         <source>Preview the mute cue</source>
@@ -1293,19 +1293,19 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>миллисекунды</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>секунды</translation>
     </message>
     <message>
         <source>kilobits per second</source>
-        <translation type="unfinished"></translation>
+        <translation>килобит в секунду</translation>
     </message>
     <message>
         <source>decibels</source>
-        <translation type="unfinished"></translation>
+        <translation>децибелы</translation>
     </message>
 </context>
 <context>
@@ -1677,11 +1677,11 @@ This value allows you to set the maximum number of users allowed in the channel.
     </message>
     <message>
         <source>milliseconds</source>
-        <translation type="unfinished"></translation>
+        <translation>миллисекунды</translation>
     </message>
     <message>
         <source>meters</source>
-        <translation type="unfinished"></translation>
+        <translation>метры</translation>
     </message>
 </context>
 <context>
@@ -2264,7 +2264,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     </message>
     <message>
         <source>Push to talk</source>
-        <translation type="unfinished">Нажмите что бы говорить</translation>
+        <translation>Активация по кнопке</translation>
     </message>
     <message>
         <source>Use the &quot;push to talk shortcut&quot; button to assign a key</source>
@@ -4360,7 +4360,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>Misc.</source>
-        <translation>Прочее</translation>
+        <translation>Прочее.</translation>
     </message>
     <message>
         <source>Number of users that will trigger message limiting functionality.</source>
@@ -4504,7 +4504,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source>decibels</source>
-        <translation type="unfinished"></translation>
+        <translation>децибелы</translation>
     </message>
 </context>
 <context>
@@ -4937,7 +4937,7 @@ The setting only applies for new messages, the already shown ones will retain th
     </message>
     <message>
         <source> seconds</source>
-        <translation type="unfinished"></translation>
+        <translation> секунды</translation>
     </message>
     <message>
         <source>If this is checked, users will always be visible in the TalkingUI (regardless of talking state).</source>
@@ -5219,10 +5219,6 @@ The setting only applies for new messages, the already shown ones will retain th
         <translation>&lt;p&gt;%1&lt;/p&gt;&lt;ul&gt;%2&lt;/ul&gt;&lt;p&gt;Конкретные ошибки с этим сертификатом:&lt;/p&gt;&lt;ol&gt;%3&lt;/ol&gt;&lt;p&gt;Вы все равно хотите принять этот сертификат?&lt;br /&gt;(Он также будет сохранен, так что вам больше не зададут это вопрос).&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>SSL Version mismatch</source>
-        <translation>Версия SSL не совпадает</translation>
-    </message>
-    <message>
         <source>Server connection failed.</source>
         <translation>Сбой подключения к серверу.</translation>
     </message>
@@ -5442,10 +5438,6 @@ The setting only applies for new messages, the already shown ones will retain th
     <message>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
         <translation>&lt;b&gt;ПРЕДУПРЕЖДЕНИЕ:&lt;/b&gt; Сервер передает сертификат, который отличается от сохраненного ранее.</translation>
-    </message>
-    <message>
-        <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation>Данный сервер использует старые стандарты шифрования и больше не поддерживается новыми версиями Mumble.</translation>
     </message>
     <message>
         <source>Server connection failed: %1.</source>
@@ -7015,7 +7007,7 @@ mumble://[&lt;имя пользователя&gt;[:&lt;пароль&gt;]@]&lt;х
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Информация</translation>
     </message>
     <message>
         <source>Ig&amp;nore Messages</source>
@@ -7151,6 +7143,27 @@ mumble://[&lt;имя пользователя&gt;[:&lt;пароль&gt;]@]&lt;х
     </message>
     <message>
         <source>Filtered channels and users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle positional audio</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will toggle positional audio on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSL error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble is unable to establish a secure connection to the server. (&quot;%1&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This could be caused by one of the following scenarios:&lt;ul&gt;&lt;li&gt;Your client and the server use different encryption standards. This could be because you are using a very old client or the server you are connecting to is very old. In the first case, you should update your client and in the second case you should contact the server administrator so that they can update their server.&lt;/li&gt;&lt;li&gt;Either your client or the server is using an old operating system that doesn&apos;t provide up-to-date encryption methods. In this case you should consider updating your OS or contacting the server admin so that they can update theirs.&lt;/li&gt;&lt;li&gt;The server you are connecting to isn&apos;t actually a Mumble server. Please ensure that the used server address really belongs to a Mumble server and not e.g. to a game server.&lt;/li&gt;&lt;li&gt;The port you are connecting to does not belong to a Mumble server but instead is bound to a completely unrelated process on the server-side. Please double-check you have used the correct port.&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9638,7 +9651,7 @@ An access token is a text string, which can be used as a password for very simpl
     </message>
     <message>
         <source>Channel will be pinned when filtering is enabled</source>
-        <translation>Канал будет закреплен, если фильтрация включена.</translation>
+        <translation>Канал будет закреплен, если фильтрация включена</translation>
     </message>
     <message>
         <source>Channel Listener</source>
@@ -9957,7 +9970,7 @@ Please contact your server administrator for further information.</source>
     </message>
     <message>
         <source>Push to talk</source>
-        <translation>Нажмите что бы говорить</translation>
+        <translation>Активация по кнопке</translation>
     </message>
 </context>
 </TS>

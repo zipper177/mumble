@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -11,11 +11,7 @@
 #include "Server.h"
 #include "Version.h"
 
-#if QT_VERSION >= 0x060000
-#	include <QtGui/QAction>
-#else
-#	include <QtWidgets/QAction>
-#endif
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>

@@ -1,4 +1,4 @@
-# Copyright 2020-2023 The Mumble Developers. All rights reserved.
+# Copyright The Mumble Developers. All rights reserved.
 # Use of this source code is governed by a BSD-style license
 # that can be found in the LICENSE file at the root of the
 # Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -181,19 +181,6 @@ if(zeroconf)
 			"${3RDPARTY_DIR}/qqbonjour/BonjourServiceRegister.cpp"
 			"${3RDPARTY_DIR}/qqbonjour/BonjourServiceRegister.h"
 	)
-endif()
-
-if(NOT WIN32 AND NOT APPLE)
-	find_pkg(Qt6 COMPONENTS DBus REQUIRED)
-
-	target_sources(mumble-server
-		PRIVATE
-			"DBus.cpp"
-			"DBus.h"
-	)
-
-	target_compile_definitions(mumble-server PUBLIC "USE_DBUS")
-	target_link_libraries(mumble-server PRIVATE Qt6::DBus)
 endif()
 
 if(ice)

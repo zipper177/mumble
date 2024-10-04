@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -106,13 +106,7 @@ QFlags< ChanACL::Perm > ChanACL::effectivePermissions(ServerUser *p, Channel *ch
 		return static_cast< Permissions >(All & ~(Speak | Whisper));
 	}
 
-#	if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-	// Qt 5.15 introduced a default constructor that initializes the flags to be set to no flags
 	Permissions granted;
-#	else
-	// Before Qt 5.15 we have emulate the default constructor by assigning a literal zero
-	Permissions granted = 0;
-#	endif
 
 	if (cache) {
 		QHash< Channel *, Permissions > *h = cache->value(p);

@@ -1,4 +1,4 @@
-// Copyright 2020-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -510,19 +510,11 @@ void TalkingUI::mousePressEvent(QMouseEvent *event) {
 	for (auto &currentContainer : m_containers) {
 		const QRect containerArea(currentContainer->getWidget()->mapToGlobal(QPoint(0, 0)),
 								  currentContainer->getWidget()->size());
-#if QT_VERSION >= 0x060000
 		if (containerArea.contains(event->globalPosition().toPoint())) {
-#else
-		if (containerArea.contains(event->globalPos())) {
-#endif
 			for (auto &currentEntry : currentContainer->getEntries()) {
 				const QRect entryArea(currentEntry->getWidget()->mapToGlobal(QPoint(0, 0)),
 									  currentEntry->getWidget()->size());
-#if QT_VERSION >= 0x060000
 				if (entryArea.contains(event->globalPosition().toPoint())) {
-#else
-				if (entryArea.contains(event->globalPos())) {
-#endif
 					switch (currentEntry->getType()) {
 						case EntryType::USER:
 							setSelection(
@@ -566,11 +558,7 @@ void TalkingUI::mousePressEvent(QMouseEvent *event) {
 			// the TalkingUI.
 			QMetaObject::invokeMethod(
 				Global::get().mw, "on_qtvUsers_customContextMenuRequested", Qt::QueuedConnection,
-#if QT_VERSION >= 0x060000
 				Q_ARG(QPoint, Global::get().mw->qtvUsers->mapFromGlobal(event->globalPosition().toPoint())),
-#else
-				Q_ARG(QPoint, Global::get().mw->qtvUsers->mapFromGlobal(event->globalPos())),
-#endif
 				Q_ARG(bool, false));
 		}
 	} else {

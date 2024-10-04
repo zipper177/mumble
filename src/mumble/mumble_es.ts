@@ -2822,7 +2822,7 @@ Are you sure you wish to replace your certificate?
     </message>
     <message>
         <source>&lt;p&gt;Mumble can use certificates to authenticate with servers. Using certificates avoids passwords, meaning you don&apos;t need to disclose any password to the remote site. It also enables very easy user registration and a client side friends list independent of servers.&lt;/p&gt;&lt;p&gt;While Mumble can work without certificates, the majority of servers will expect you to have one.&lt;/p&gt;&lt;p&gt;Creating a new certificate automatically is sufficient for most use cases. But Mumble also supports certificates representing trust in the users ownership of an email address. These certificates are issued by third parties. For more information see our &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;user certificate documentation&lt;/a&gt;. &lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Mumble puede usar certificados para autenticarse con servidores. El uso de certificados evita contraseñas, lo que significa que no necesita revelar ninguna contraseña al sitio remoto. También permite un registro de usuario muy fácil y una lista de amigos del lado cliente independiente de los servidores. &lt;/p&gt;&lt;p&gt;Mientras que Mumble puede funcionar sin certificados, la mayoría de los servidores esperan que tengas uno. &lt;/p&gt;&lt;p&gt;Crear un nuevo certificado automáticamente es suficiente para la mayoría de los casos de uso. Pero Mumble también admite certificados que representan la confianza en la propiedad de los usuarios de una dirección de correo electrónico. Estos certificados son emitidos por terceros. Para más información, consulte nuestra &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;documentación de certificados de usuario&lt;/a&gt;. &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5219,10 +5219,6 @@ La configuración solo se aplica a los mensajes nuevos, los que ya se muestran c
         <translation>&lt;p&gt;%1&lt;/p&gt;&lt;ul&gt;%2&lt;/ul&gt;&lt;p&gt;Los errores específicos de este certificado son:&lt;/p&gt;&lt;ol&gt;%3&lt;/ol&gt;&lt;p&gt;¿Desea aceptar este certificado de todos modos?&lt;br /&gt; (También se almacenará para que no se le vuelva a preguntar.)&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>SSL Version mismatch</source>
-        <translation>Las versiones de SSL no coinciden</translation>
-    </message>
-    <message>
         <source>Server connection failed.</source>
         <translation>Conexión con el servidor fallida.</translation>
     </message>
@@ -5442,10 +5438,6 @@ La configuración solo se aplica a los mensajes nuevos, los que ya se muestran c
     <message>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
         <translation>&lt;b&gt;ADVERTENCIA:&lt;/b&gt; El servidor presentó un certificado que es diferente del almacenado.</translation>
-    </message>
-    <message>
-        <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation>El servidor usa un estándar de cifrado antiguo y no es soportado por versiones modernas de Mumble.</translation>
     </message>
     <message>
         <source>Server connection failed: %1.</source>
@@ -7153,6 +7145,27 @@ Las opciones válidas son:
         <source>Filtered channels and users</source>
         <translation>Canales filtrados y usuarias</translation>
     </message>
+    <message>
+        <source>Toggle positional audio</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will toggle positional audio on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSL error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble is unable to establish a secure connection to the server. (&quot;%1&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This could be caused by one of the following scenarios:&lt;ul&gt;&lt;li&gt;Your client and the server use different encryption standards. This could be because you are using a very old client or the server you are connecting to is very old. In the first case, you should update your client and in the second case you should contact the server administrator so that they can update their server.&lt;/li&gt;&lt;li&gt;Either your client or the server is using an old operating system that doesn&apos;t provide up-to-date encryption methods. In this case you should consider updating your OS or contacting the server admin so that they can update theirs.&lt;/li&gt;&lt;li&gt;The server you are connecting to isn&apos;t actually a Mumble server. Please ensure that the used server address really belongs to a Mumble server and not e.g. to a game server.&lt;/li&gt;&lt;li&gt;The port you are connecting to does not belong to a Mumble server but instead is bound to a completely unrelated process on the server-side. Please double-check you have used the correct port.&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Manual</name>
@@ -8694,7 +8707,8 @@ Puedes registrarlos otra vez.</translation>
     <message>
         <source>&lt;p&gt;If you&apos;re using Linux this is most likely because you are using a version from your distribution&apos;s package repository that have their own update cycles.&lt;/p&gt;&lt;p&gt;If you want to always have the most recent Mumble version, you should consider using a different method of installation.
 See &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt;the project repository&lt;/a&gt; for what alternatives there are.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Si está utilizando Linux, lo más probable es que esto se deba a que está utilizando una versión del repositorio de paquetes de su distribución que tiene sus propios ciclos de actualización.&lt;/p&gt;&lt;p&gt;Si desea tener siempre la versión más reciente de Mumble, debe considerar usar un método de instalación diferente.
+Consulte &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt; el repositorio del proyecto&lt;/a&gt; para ver qué alternativas existen.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

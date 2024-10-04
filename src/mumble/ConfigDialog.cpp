@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -252,11 +252,7 @@ void ConfigDialog::updateListView() {
 	int configNavbarWidth = 0;
 
 	foreach (ConfigWidget *cw, qmWidgets) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 		configNavbarWidth = qMax(configNavbarWidth, qfm.horizontalAdvance(cw->title()));
-#else
-		configNavbarWidth = qMax(configNavbarWidth, qfm.width(cw->title()));
-#endif
 
 		QListWidgetItem *i = new QListWidgetItem(qlwIcons);
 		i->setIcon(cw->icon());

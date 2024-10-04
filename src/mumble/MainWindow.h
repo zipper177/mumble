@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -108,6 +108,7 @@ public:
 	GlobalShortcut *gsConfigDialog, *gsAudioWizard, *gsConfigCert;
 	GlobalShortcut *gsAudioTTS;
 	GlobalShortcut *gsHelpAbout, *gsHelpAboutQt, *gsHelpVersionCheck;
+	GlobalShortcut *gsTogglePositionalAudio;
 
 	DockTitleBar *dtbLogDockTitle, *dtbChatDockTitle;
 
@@ -150,11 +151,7 @@ public:
 	void openUserLocalNicknameDialog(const ClientUser &p);
 
 #ifdef Q_OS_WIN
-#	if QT_VERSION >= 0x060000
 	bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) Q_DECL_OVERRIDE;
-#	else
-	bool nativeEvent(const QByteArray &eventType, void *message, long *result) Q_DECL_OVERRIDE;
-#	endif
 	unsigned int uiNewHardware;
 #endif
 protected:
@@ -342,6 +339,7 @@ public slots:
 	void on_gsHelpAbout_triggered(bool, QVariant);
 	void on_gsHelpAboutQt_triggered(bool, QVariant);
 	void on_gsHelpVersionCheck_triggered(bool, QVariant);
+	void on_gsTogglePositionalAudio_triggered(bool, QVariant);
 
 	void on_Reconnect_timeout();
 	void on_Icon_activated(QSystemTrayIcon::ActivationReason);
@@ -437,6 +435,7 @@ public:
 	void openAboutDialog();
 	void openAboutQtDialog();
 	void versionCheck();
+	void enablePositionalAudio(bool enable);
 };
 
 #endif

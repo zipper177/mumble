@@ -1,4 +1,4 @@
-// Copyright 2014-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -20,11 +20,7 @@ protected:
 	OverlayEditorScene oes;
 	OverlaySettings *os;
 
-#if QT_VERSION >= 0x060000
 	void enterEvent(QEnterEvent *e) Q_DECL_OVERRIDE;
-#else
-	void enterEvent(QEvent *e) Q_DECL_OVERRIDE;
-#endif
 	void leaveEvent(QEvent *e) Q_DECL_OVERRIDE;
 
 public:

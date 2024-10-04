@@ -2821,7 +2821,7 @@ Are you sure you wish to replace your certificate?
     </message>
     <message>
         <source>&lt;p&gt;Mumble can use certificates to authenticate with servers. Using certificates avoids passwords, meaning you don&apos;t need to disclose any password to the remote site. It also enables very easy user registration and a client side friends list independent of servers.&lt;/p&gt;&lt;p&gt;While Mumble can work without certificates, the majority of servers will expect you to have one.&lt;/p&gt;&lt;p&gt;Creating a new certificate automatically is sufficient for most use cases. But Mumble also supports certificates representing trust in the users ownership of an email address. These certificates are issued by third parties. For more information see our &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;user certificate documentation&lt;/a&gt;. &lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Mumble 可以使用证书与服务器进行身份验证。使用证书避免密码，意味着你无需向远程站点披露任何密码。证书还允许非常简单的用户注册和与服务器无关的客户端好友列表。&lt;/p&gt;&lt;p&gt;虽然没有证书 Mumble 也能正常工作，但多数服务器都期待你有一个证书。&lt;/p&gt;&lt;p&gt;对于多数使用情况，自动创建新证书已足够。Mumble 还支持表示对电子邮件地址用户所有权信任的证书。 这些证书由第三方发行。更多信息，请见我们的 &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;用户证书文档&lt;/a&gt;。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5217,10 +5217,6 @@ The setting only applies for new messages, the already shown ones will retain th
         <translation>&lt;p&gt;%1&lt;/p&gt;&lt;ul&gt;%2&lt;/ul&gt;&lt;p&gt;此证书的具体错误为：&lt;/p&gt;&lt;ol&gt;%3&lt;/ol&gt;&lt;p&gt;您仍希望接受此证书吗？&lt;br /&gt;（此信任会被保存，您只会被询问这一次。）&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>SSL Version mismatch</source>
-        <translation>SSL 版本不匹配</translation>
-    </message>
-    <message>
         <source>Server connection failed.</source>
         <translation>连接服务器失败。</translation>
     </message>
@@ -5440,10 +5436,6 @@ The setting only applies for new messages, the already shown ones will retain th
     <message>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
         <translation>&lt;b&gt;警告：&lt;/b&gt;服务器现有证书与已保存的证书不一致。</translation>
-    </message>
-    <message>
-        <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation>此服务器使用了一个早期的加密标准，当前版本 Mumble 已不支持该标准。</translation>
     </message>
     <message>
         <source>Server connection failed: %1.</source>
@@ -7151,6 +7143,27 @@ mumble://[&lt;用户名&gt;[:&lt;密码&gt;]@]&lt;主机名&gt;[:&lt;端口&gt;]
         <source>Filtered channels and users</source>
         <translation>筛选的频道和用户</translation>
     </message>
+    <message>
+        <source>Toggle positional audio</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will toggle positional audio on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSL error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble is unable to establish a secure connection to the server. (&quot;%1&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This could be caused by one of the following scenarios:&lt;ul&gt;&lt;li&gt;Your client and the server use different encryption standards. This could be because you are using a very old client or the server you are connecting to is very old. In the first case, you should update your client and in the second case you should contact the server administrator so that they can update their server.&lt;/li&gt;&lt;li&gt;Either your client or the server is using an old operating system that doesn&apos;t provide up-to-date encryption methods. In this case you should consider updating your OS or contacting the server admin so that they can update theirs.&lt;/li&gt;&lt;li&gt;The server you are connecting to isn&apos;t actually a Mumble server. Please ensure that the used server address really belongs to a Mumble server and not e.g. to a game server.&lt;/li&gt;&lt;li&gt;The port you are connecting to does not belong to a Mumble server but instead is bound to a completely unrelated process on the server-side. Please double-check you have used the correct port.&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Manual</name>
@@ -8692,7 +8705,8 @@ You can register them again.</source>
     <message>
         <source>&lt;p&gt;If you&apos;re using Linux this is most likely because you are using a version from your distribution&apos;s package repository that have their own update cycles.&lt;/p&gt;&lt;p&gt;If you want to always have the most recent Mumble version, you should consider using a different method of installation.
 See &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt;the project repository&lt;/a&gt; for what alternatives there are.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;如果你在使用 Linux，那么可能性最大的情况是你在使用一个来自有自己更新周期的发行版包仓库的版本。&lt;/p&gt;&lt;p&gt;如果你想使用拥有最新版的 Mumble 版本，你应该考虑使用不同的安装方式。
+参见 &lt;a href=&quot;https://github.com/mumble-voip/mumble&quot;&gt;项目仓库&lt;/a&gt; 了解有哪些其他方式。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

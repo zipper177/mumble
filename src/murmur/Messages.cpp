@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -214,8 +214,7 @@ void Server::msgAuthenticate(ServerUser *uSource, MumbleProto::Authenticate &msg
 	QString pw  = u8(msg.password());
 
 	// Fetch ID and stored username.
-	// Since this may call DBus, which may recall our dbus messages, this function needs
-	// to support re-entrancy, and also to support the fact that sessions may go away.
+	// This function needs to support the fact that sessions may go away.
 	int id = authenticate(uSource->qsName, pw, static_cast< int >(uSource->uiSession), uSource->qslEmail,
 						  uSource->qsHash, uSource->bVerified, uSource->peerCertificateChain());
 
@@ -675,12 +674,7 @@ void Server::msgBanList(ServerUser *uSource, MumbleProto::BanList &msg) {
 		}
 		sendMessage(uSource, msg);
 	} else {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
 		previousBans = QSet< Ban >(qlBans.begin(), qlBans.end());
-#else
-		// In Qt 5.14 QList::toSet() has been deprecated as there exists a dedicated constructor of QSet for this now
-		previousBans = qlBans.toSet();
-#endif
 		qlBans.clear();
 		for (int i = 0; i < msg.bans_size(); ++i) {
 			const MumbleProto::BanList_BanEntry &be = msg.bans(i);
@@ -702,12 +696,7 @@ void Server::msgBanList(ServerUser *uSource, MumbleProto::BanList &msg) {
 				qlBans << b;
 			}
 		}
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-		newBans = QSet< Ban >(qlBans.begin(), qlBans.end());
-#else
-		// In Qt 5.14 QList::toSet() has been deprecated as there exists a dedicated constructor of QSet for this now
-		newBans = qlBans.toSet();
-#endif
+		newBans             = QSet< Ban >(qlBans.begin(), qlBans.end());
 		QSet< Ban > removed = previousBans - newBans;
 		QSet< Ban > added   = newBans - previousBans;
 		foreach (const Ban &b, removed) { log(uSource, QString("Removed ban: %1").arg(b.toString())); }

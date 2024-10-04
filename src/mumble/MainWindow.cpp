@@ -1,4 +1,4 @@
-// Copyright 2007-2023 The Mumble Developers. All rights reserved.
+// Copyright The Mumble Developers. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file at the root of the
 // Mumble source tree or at <https://www.mumble.info/LICENSE>.
@@ -412,6 +412,11 @@ void MainWindow::createActions() {
 	gsHelpVersionCheck->setObjectName(QLatin1String("gsHelpVersionCheck"));
 	gsHelpVersionCheck->qsWhatsThis = tr("This will check if mumble is up to date");
 
+	gsTogglePositionalAudio = new GlobalShortcut(this, GlobalShortcutType::TogglePositionalAudio,
+												 tr("Toggle positional audio", "Global Shortcut"));
+	gsTogglePositionalAudio->setObjectName("gsTogglePositionalAudio");
+	gsTogglePositionalAudio->qsWhatsThis = tr("This will toggle positional audio on/off");
+
 #ifndef Q_OS_MAC
 	qstiIcon->show();
 #endif
@@ -425,7 +430,7 @@ void MainWindow::setupGui() {
 #ifdef Q_OS_MAC
 	QMenu *qmWindow = new QMenu(tr("&Window"), this);
 	menubar->insertMenu(qmHelp->menuAction(), qmWindow);
-#	if QT_VERSION >= 0x060400
+#	if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
 	qmWindow->addAction(tr("Minimize"), QKeySequence(tr("Ctrl+M")), this, &MainWindow::showMinimized);
 #	else
 	qmWindow->addAction(tr("Minimize"), this, SLOT(showMinimized()), QKeySequence(tr("Ctrl+M")));
@@ -613,11 +618,7 @@ void MainWindow::msgBox(QString msg) {
 }
 
 #ifdef Q_OS_WIN
-#	if QT_VERSION >= 0x060000
 bool MainWindow::nativeEvent(const QByteArray &, void *message, qintptr *) {
-#	else
-bool MainWindow::nativeEvent(const QByteArray &, void *message, long *) {
-#	endif
 	MSG *msg = reinterpret_cast< MSG * >(message);
 	if (msg->message == WM_DEVICECHANGE && msg->wParam == DBT_DEVNODES_CHANGED)
 		uiNewHardware++;
@@ -3386,6 +3387,14 @@ void MainWindow::on_gsHelpVersionCheck_triggered(bool down, QVariant) {
 	versionCheck();
 }
 
+void MainWindow::on_gsTogglePositionalAudio_triggered(bool down, QVariant) {
+	if (!down) {
+		return;
+	}
+
+	enablePositionalAudio(!Global::get().s.bPositionalAudio);
+}
+
 
 void MainWindow::whisperReleased(QVariant scdata) {
 	if (Global::get().iPushToTalk <= 0)
@@ -3533,16 +3542,9 @@ void MainWindow::serverDisconnected(QAbstractSocket::SocketError err, QString re
 	}
 
 	QSet< QAction * > qs;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
 	qs += QSet< QAction * >(qlServerActions.begin(), qlServerActions.end());
 	qs += QSet< QAction * >(qlChannelActions.begin(), qlChannelActions.end());
 	qs += QSet< QAction * >(qlUserActions.begin(), qlUserActions.end());
-#else
-	// In Qt 5.14 QList::toSet() has been deprecated as there exists a dedicated constructor of QSet for this now
-	qs += qlServerActions.toSet();
-	qs += qlChannelActions.toSet();
-	qs += qlUserActions.toSet();
-#endif
 
 	foreach (QAction *a, qs)
 		delete a;
@@ -3616,10 +3618,31 @@ void MainWindow::serverDisconnected(QAbstractSocket::SocketError err, QString re
 			}
 		}
 	} else if (err == QAbstractSocket::SslHandshakeFailedError) {
-		QMessageBox::warning(this, tr("SSL Version mismatch"),
-							 tr("This server is using an older encryption standard, and is no longer supported by "
-								"modern versions of Mumble."),
-							 QMessageBox::Ok);
+		QMessageBox msgBox;
+		msgBox.addButton(QMessageBox::Ok);
+		msgBox.setIcon(QMessageBox::Warning);
+		msgBox.setTextFormat(Qt::RichText);
+		msgBox.setWindowTitle(tr("SSL error"));
+		msgBox.setText(tr("Mumble is unable to establish a secure connection to the server. (\"%1\")").arg(reason));
+		// clang-format off
+		msgBox.setInformativeText(
+			tr("This could be caused by one of the following scenarios:"
+			   "<ul>"
+			       "<li>Your client and the server use different encryption standards. This could be because you are using "
+			       "a very old client or the server you are connecting to is very old. In the first case, you should update "
+			       "your client and in the second case you should contact the server administrator so that they can update "
+				   "their server.</li>"
+				   "<li>Either your client or the server is using an old operating system that doesn't provide up-to-date "
+				   "encryption methods. In this case you should consider updating your OS or contacting the server admin "
+				   "so that they can update theirs.</li>"
+				   "<li>The server you are connecting to isn't actually a Mumble server. Please ensure that the used server "
+				   "address really belongs to a Mumble server and not e.g. to a game server.</li>"
+				   "<li>The port you are connecting to does not belong to a Mumble server but instead is bound to a "
+				   "completely unrelated process on the server-side. Please double-check you have used the correct port.</li>"
+				"</ul>"));
+		// clang-format on
+
+		msgBox.exec();
 	} else {
 		bool ok = false;
 
@@ -3631,15 +3654,7 @@ void MainWindow::serverDisconnected(QAbstractSocket::SocketError err, QString re
 			Global::get().l->log(Log::ServerDisconnected, tr("Disconnected from server."));
 		}
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-		// Qt 5.15 introduced a default constructor that initializes the flags to be set to no flags
 		Qt::WindowFlags wf;
-#elif defined(Q_OS_MAC)
-		Qt::WindowFlags wf = Qt::Sheet;
-#else
-		// Before Qt 5.15 we have emulate the default constructor by assigning a literal zero
-		Qt::WindowFlags wf = 0;
-#endif
 
 		bool matched = true;
 		switch (rtLast) {
@@ -4186,6 +4201,10 @@ void MainWindow::openAboutQtDialog() {
 
 void MainWindow::versionCheck() {
 	new VersionCheck(false, this);
+}
+
+void MainWindow::enablePositionalAudio(bool enable) {
+	Global::get().s.bPositionalAudio = enable;
 }
 
 void MainWindow::on_muteCuePopup_triggered() {

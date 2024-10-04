@@ -2822,7 +2822,7 @@ Sind Sie sicher, dass Sie Ihr Zertifikat ersetzen möchten?
     </message>
     <message>
         <source>&lt;p&gt;Mumble can use certificates to authenticate with servers. Using certificates avoids passwords, meaning you don&apos;t need to disclose any password to the remote site. It also enables very easy user registration and a client side friends list independent of servers.&lt;/p&gt;&lt;p&gt;While Mumble can work without certificates, the majority of servers will expect you to have one.&lt;/p&gt;&lt;p&gt;Creating a new certificate automatically is sufficient for most use cases. But Mumble also supports certificates representing trust in the users ownership of an email address. These certificates are issued by third parties. For more information see our &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;user certificate documentation&lt;/a&gt;. &lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Mumble kann Zertifikate verwenden, um sich bei Servern zu authentifizieren. Durch die Verwendung von Zertifikaten entfällt die Notwendigkeit von Passwörtern, was bedeutet, dass du kein Passwort an die entfernte Seite weitergeben musst. Zudem ermöglicht es eine sehr einfache Benutzerregistrierung und eine clientseitige Freundesliste, die unabhängig von den Servern ist.&lt;/p&gt;&lt;p&gt;Obwohl Mumble ohne Zertifikate funktionieren kann, erwarten die meisten Server, dass du eines besitzt.&lt;/p&gt;&lt;p&gt;Das automatische Erstellen eines neuen Zertifikats ist für die meisten Anwendungsfälle ausreichend. Mumble unterstützt jedoch auch Zertifikate, die das Vertrauen in den Besitz einer E-Mail-Adresse durch den Benutzer belegen. Diese Zertifikate werden von Dritten ausgestellt. Weitere Informationen findest du in unserer &lt;a href=&quot;https://www.mumble.info/documentation/user/certificates/&quot;&gt;Dokumentation zu Benutzerzertifikaten&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5218,10 +5218,6 @@ Die Einstellung gilt nur für neue Nachrichten, die bereits angezeigten behalten
         <translation>&lt;p&gt;%1&lt;/p&gt;&lt;ul&gt;%2&lt;/ul&gt;&lt;p&gt;Die Fehler dieses Zertifikats sind:&lt;/p&gt;&lt;ol&gt;%3&lt;/ol&gt;&lt;p&gt;Wollen Sie dieses Zertifikat trotzdem akzeptieren?&lt;br /&gt;(Es wird auch abgespeichert, weshalb Sie nicht wieder gefragt werden.)&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>SSL Version mismatch</source>
-        <translation>SSL Versions Diskrepanz</translation>
-    </message>
-    <message>
         <source>Server connection failed.</source>
         <translation>Serververbindung fehlgeschlagen.</translation>
     </message>
@@ -5441,10 +5437,6 @@ Die Einstellung gilt nur für neue Nachrichten, die bereits angezeigten behalten
     <message>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
         <translation>&lt;b&gt;WARNUNG:&lt;/b&gt; Der Server hat ein Zertifikat gesendet, das sich vom für diesen Server gespeicherten Zertifikat unterscheidet.</translation>
-    </message>
-    <message>
-        <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation>Dieser Server verwendet einen älteren Standard zur Verschlüsselung und wird von modernen Versionen von Mumble nicht mehr unterstützt.</translation>
     </message>
     <message>
         <source>Server connection failed: %1.</source>
@@ -7144,6 +7136,27 @@ Gültige Optionen sind:
     <message>
         <source>Filtered channels and users</source>
         <translation>Gefilterte Kanäle und Benutzer</translation>
+    </message>
+    <message>
+        <source>Toggle positional audio</source>
+        <comment>Global Shortcut</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will toggle positional audio on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSL error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mumble is unable to establish a secure connection to the server. (&quot;%1&quot;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This could be caused by one of the following scenarios:&lt;ul&gt;&lt;li&gt;Your client and the server use different encryption standards. This could be because you are using a very old client or the server you are connecting to is very old. In the first case, you should update your client and in the second case you should contact the server administrator so that they can update their server.&lt;/li&gt;&lt;li&gt;Either your client or the server is using an old operating system that doesn&apos;t provide up-to-date encryption methods. In this case you should consider updating your OS or contacting the server admin so that they can update theirs.&lt;/li&gt;&lt;li&gt;The server you are connecting to isn&apos;t actually a Mumble server. Please ensure that the used server address really belongs to a Mumble server and not e.g. to a game server.&lt;/li&gt;&lt;li&gt;The port you are connecting to does not belong to a Mumble server but instead is bound to a completely unrelated process on the server-side. Please double-check you have used the correct port.&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
